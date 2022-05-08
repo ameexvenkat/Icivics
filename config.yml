@@ -1,0 +1,13 @@
+HUB: 
+PORT: 
+Market: 
+StageUser: 
+StagePwd: 
+Url: 
+TestRun: Local
+Browser: chrome
+
+# Mobile settings
+
+Width: 412
+Height: 651

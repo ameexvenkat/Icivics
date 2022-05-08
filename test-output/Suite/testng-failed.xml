@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="methods">
+  <test thread-count="5" name="Test(failed)" parallel="methods">
+    <classes>
+      <class name="enfamil.testcases.Enrollment_Test">
+        <methods>
+          <include name="stopReport"/>
+          <include name="Enrollment1" invocation-numbers="0"/>
+          <include name="setUpClass"/>
+          <include name="report"/>
+          <include name="setValues"/>
+          <include name="startReport"/>
+          <include name="afterMethod"/>
+          <include name="beforeMethod"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- enfamil.testcases.Enrollment_Test -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
