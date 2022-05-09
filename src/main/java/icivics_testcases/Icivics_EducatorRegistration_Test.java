@@ -36,7 +36,6 @@ public class Icivics_EducatorRegistration_Test extends ProjectSpecificMethods {
 		.nextbutton();
 	}
 	
-	
 	// C322 - Do all buttons have hover/click states consistent with Live?
 	@Test(dataProvider = "fetchData", priority=1)
 	public void ButtonHover(String URL) throws IOException, InterruptedException {
@@ -93,9 +92,9 @@ public class Icivics_EducatorRegistration_Test extends ProjectSpecificMethods {
 		.typos();
 	}
 	
+	// C326 - Do you see a set of 5 numbered page breadcrumbs?
 	@Test(dataProvider = "fetchData", priority=5)
 	public void Verifybreadcrumbs(String URL) throws IOException, InterruptedException {
-		// C326 - Do you see a set of 5 numbered page breadcrumbs?
 		node = test.createNode("C326 - Do you see a set of 5 numbered page breadcrumbs?");
 		extent.attachReporter(reporter);
 		new Icivics_EducatorReg(driver, node, prop)

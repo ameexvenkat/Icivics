@@ -1949,7 +1949,6 @@ public class SeleniumBase extends Reporter implements Browser, Element {
 					+ "'),'::after').getPropertyValue('" + value + "')";
 			String backcolor = (String) js.executeScript(element);
 			Assert.assertEquals(backcolor, rgbvalue);
-			System.out.println(backcolor);
 		} catch (Exception e) {
 			Log.fatal("Unable to find the given element " + value + " :" + e.toString());
 			reportStep("Unable to find the given element " + value + " :" + e.toString(), "FAIL");

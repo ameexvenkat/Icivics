@@ -3,22 +3,8 @@
 <suite parallel="classes" name="Suite">
   <test thread-count="5" parallel="classes" name="Test">
     <classes>
-      <class name="enfamil.testcases.SCE35_Contactus"/>
-      <class name="enfamil.testcases.SCE23_SampleRequest"/>
-      <class name="enfamil.testcases.LN_SCE1_002_InvalidLogin"/>
-      <class name="enfamil.testcases.SCE33_SearchPage"/>
-      <class name="enfamil.testcases.SCE34_Contactus"/>
-      <class name="enfamil.testcases.SCE31_SearchPage"/>
-      <class name="enfamil.testcases.SCE56_LiveChat"/>
-      <class name="enfamil.testcases.SCE50_StoreLocator"/>
-      <class name="enfamil.testcases.SCE24_SampleRequest"/>
-      <class name="enfamil.testcases.SCE48_StoreLocator"/>
-      <class name="enfamil.testcases.EN_SCE1_001_Enrollment"/>
-      <class name="enfamil.testcases.SCE55_LiveChat"/>
-      <class name="enfamil.testcases.SCE22_SampleRequest"/>
-      <class name="enfamil.testcases.LN_SCE1_001_Login_Logout"/>
-      <class name="enfamil.testcases.SCE32_SearchPage"/>
-      <class name="enfamil.testcases.SCE49_StoreLocator"/>
+      <class name="icivics_testcases.Icivics_EducatorRegistration_Test"/>
+      <class name="icivics_testcases.Icivics_EducatorRegistration1_Test"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
