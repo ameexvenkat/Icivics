@@ -199,6 +199,12 @@ public interface Element {
 
 
 	public boolean verifyTitlecontains(String title);
+
+
+	public String writePropfile(String propname, String value) throws IOException;
+
+
+	public String writePropfile(String propname, String key, String value) throws IOException;
 	
 }
 

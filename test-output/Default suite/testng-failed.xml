@@ -3,19 +3,19 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="icivics_testcases.Icivics_EducatorRegistration1_Test">
+      <class name="icivics_testcases.Icivics_EducatorRegistration2_Test">
         <methods>
+          <include name="setValues"/>
           <include name="afterMethod"/>
           <include name="setUpClass"/>
-          <include name="setValues"/>
           <include name="stopReport"/>
-          <include name="educatorregistration1" invocation-numbers="0"/>
           <include name="beforeMethod"/>
           <include name="report"/>
           <include name="tearDownClass"/>
+          <include name="verifybreadcrumbspage2" invocation-numbers="0"/>
           <include name="startReport"/>
         </methods>
-      </class> <!-- icivics_testcases.Icivics_EducatorRegistration1_Test -->
+      </class> <!-- icivics_testcases.Icivics_EducatorRegistration2_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

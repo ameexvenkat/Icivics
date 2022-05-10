@@ -2,6 +2,7 @@ package selenium.base;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -1867,6 +1868,17 @@ public class SeleniumBase extends Reporter implements Browser, Element {
 		}
 		return value;
 	}
+	
+	@Override
+	public String writePropfile(String propname, String key, String value) throws IOException {
+
+		FileOutputStream fos = new FileOutputStream("./icivics_Properties/" + propname + ".properties");
+		prop = new Properties();
+		prop.setProperty(key, value);
+		prop.store(fos, null);
+		return value;
+	}
+
 
 	@Override
 	public WebElement propElement(String locatorType) {
@@ -1949,12 +1961,17 @@ public class SeleniumBase extends Reporter implements Browser, Element {
 					+ "'),'::after').getPropertyValue('" + value + "')";
 			String backcolor = (String) js.executeScript(element);
 			Assert.assertEquals(backcolor, rgbvalue);
-			System.out.println(backcolor);
 		} catch (Exception e) {
 			Log.fatal("Unable to find the given element " + value + " :" + e.toString());
 			reportStep("Unable to find the given element " + value + " :" + e.toString(), "FAIL");
 		}
 		return value;
 
+	}
+
+	@Override
+	public String writePropfile(String propname, String value) throws IOException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

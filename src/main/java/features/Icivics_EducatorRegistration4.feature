@@ -10,7 +10,7 @@ Scenario: Do you see fields for Password, Confirm Password, Sign Up for Emails, 
 Then Validate all the fields for page4
 
 Scenario:Is the Sign Up for emails box checked by default?
-Then validate the check box for signup
+
 
 Scenario: Can you enter text/make a selection for all fields?
 Then enter data in fields 
