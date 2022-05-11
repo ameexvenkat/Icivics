@@ -1970,7 +1970,7 @@ public class SeleniumBase extends Reporter implements Browser, Element {
 
 	@Override
 	public String writePropfile(String propname, String value) throws IOException {
-		// TODO Auto-generated method stub
+	
 		return null;
 	}
 }
