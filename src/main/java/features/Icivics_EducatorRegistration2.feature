@@ -1,7 +1,8 @@
 Feature: Educator Registration ValidationPage1
 
 Scenario: C338 - Can you tell which page you are currently viewing in the breadcrumbs?
-Given verify Current page count and print
+Given Launch the icivis educatorregistration URL
+Then verify Current page count and print
 
 Scenario: C339 - Can you select Back to proceed to the previous page?
 Given Verify clicking on back button will take to previous page 1

@@ -24,7 +24,7 @@ public class Icivics_EducatorReg2 extends ProjectSpecificMethods {
 		this.prop = prop;
 	}
 	
-	
+	@Given("Given Launch the icivis educatorregistration URL")
 	public Icivics_EducatorReg2 launchURL(String URL) {
 		navigateto(URL);
 		return this;
@@ -131,8 +131,7 @@ public class Icivics_EducatorReg2 extends ProjectSpecificMethods {
 	@When("Verify firstname is remembered.")
 	public Icivics_EducatorReg2 verifyfirstnameisremembered() throws IOException {
 
-		String firstnamevalue = driver.findElement(By.xpath("(//input[contains(@class,'js-text-full text-full')])[1]"))
-				.getAttribute("value");
+		String firstnamevalue = driver.findElement(By.xpath("(//input[contains(@class,'js-text-full text-full')])[1]")).getAttribute("value");
 		if (firstnamevalue.equals("Tripti")) {
 			reportStep("Firstname value " + firstnamevalue + " is remembered ", "Pass");
 		} else {
@@ -179,6 +178,13 @@ public class Icivics_EducatorReg2 extends ProjectSpecificMethods {
 
 	@Given("User on Page 2, Verify grade level field and option is displayed as checkbox and nothing is selected as default")
 	public Icivics_EducatorReg2 verifygradelevelfield() throws IOException {
+		WebElement gradelevellabel = driver
+				.findElement(By.xpath("//span[contains(@class,'fieldset-legend js-form-required')]"));
+		if (gradelevellabel.isDisplayed()) {
+			reportStep(gradelevellabel.getText() + " label is displayed", "Pass");
+		} else {
+			reportStep("Grade Level label is not displayed", "Fail");
+		}
 		List<WebElement> checkbox = driver.findElements(By.xpath("//div[@class='form-checkboxes']/div"));
 		for (int i = 0; i <= checkbox.size() - 1; i++) {
 			checkbox.get(i).isDisplayed();
@@ -186,12 +192,11 @@ public class Icivics_EducatorReg2 extends ProjectSpecificMethods {
 			writePropfile("gradelevel", "value", checkboxvalue);
 			String checkboxvalue1 = getPropfile("gradelevel", "value");
 			if (checkboxvalue.equals(checkboxvalue1)) {
-				reportStep(checkboxvalue1 + " is matched and verified", "Pass");
+				reportStep(checkboxvalue1 + "options are matched and verified", "Pass");
 			} else {
-				reportStep(checkboxvalue1 + " is not matched", "Fail");
+				reportStep(checkboxvalue1 + "options are not matched", "Fail");
 			}
 		}
-		reportStep("Checkbox is displayed and Grade levels are verified", "Pass");
 		return this;
 	}
 
@@ -201,12 +206,12 @@ public class Icivics_EducatorReg2 extends ProjectSpecificMethods {
 		for (int i = 0; i <= checkbox.size() - 1; i++) {
 
 			if (!checkbox.get(i).isSelected()) {
-				reportStep(checkbox.get(i).getAttribute("value") + " is not selected as default is verified", "Pass");
+				reportStep(checkbox.get(i).getAttribute("value") + " option is not selected as default", "Pass");
 			} else {
-				reportStep(checkbox.get(i).getAttribute("value") + " is selected as default", "Fail");
+				reportStep(checkbox.get(i).getAttribute("value") + " option is selected as default", "Fail");
 			}
 		}
-		reportStep("Checkbox Grade level is not selected with any default", "Pass");
+		reportStep("Grade level Checkbox is not selected with any default", "Pass");
 		return this;
 	}
 
@@ -214,26 +219,29 @@ public class Icivics_EducatorReg2 extends ProjectSpecificMethods {
 	public Icivics_EducatorReg2 verifyrolefieldoptions() throws InterruptedException {
 		scrollToTheGivenWebElement("XPATH&//select[@class='form-select required form-control']");
 		waitTime(3000);
+		WebElement rolelabel = driver
+				.findElement(By.xpath("(//label[contains(@class,'control-label js-form-required')])[1]"));
+		if (rolelabel.isDisplayed()) {
+			reportStep(rolelabel.getText() + " label is displayed", "Pass");
+		} else {
+			reportStep("Role label is not displayed", "Fail");
+		}
 		WebElement role = driver.findElement(By.xpath("//select[@class='form-select required form-control']"));
 		role.click();
 		waitTime(3000);
 		Select sel = new Select(role);
 		if (sel.getFirstSelectedOption().getText().equals("- None -")) {
-			reportStep(
-					"verified " + sel.getFirstSelectedOption().getText() + " is selected as default in Role Dropdown",
-					"Pass");
+			reportStep("verified " + sel.getFirstSelectedOption().getText() + " is selected as default in Role Dropdown","Pass");
 		} else {
-			reportStep(
-					"verified " + sel.getFirstSelectedOption().getText() + " is selected as default in Role Dropdown",
-					"Fail");
+			reportStep("verified " + sel.getFirstSelectedOption().getText() + " is selected as default in Role Dropdown","Fail");
 		}
 		List<WebElement> roleoptions = sel.getOptions();
 		int size = roleoptions.size();
 		for (int i = 0; i < size - 1; i++) {
 			String options = roleoptions.get(i).getText();
-			reportStep("verified " + options + " is present in Role Dropdown", "Pass");
+			reportStep("verified that " + options + " is present in Role Dropdown", "Pass");
 		}
-		reportStep("Role dropdown is displayed and verified sucessfully", "Pass");
+		reportStep("Role dropdown is displayed and verified all the available options sucessfully", "Pass");
 		return this;
 	}
 
@@ -245,7 +253,7 @@ public class Icivics_EducatorReg2 extends ProjectSpecificMethods {
 			if (!chkBox.get(i).isSelected()) {
 				chkBox.get(i).click();
 				waitTime(1000);
-				reportStep(chkBox.get(i).getAttribute("value") + " is selected", "Pass");
+				reportStep(chkBox.get(i).getAttribute("value") + " option is selected", "Pass");
 			} else {
 				reportStep("This step failed", "Fail");
 			}
@@ -278,11 +286,11 @@ public class Icivics_EducatorReg2 extends ProjectSpecificMethods {
 		waitTime(3000);
 		WebElement othertextlabel = driver
 				.findElement(By.xpath("(//label[contains(@class,'control-label js-form-required')])[2]"));
-		if (verifyDisplayed(othertextlabel)) {
+		if (othertextlabel.isDisplayed()) {
 			reportStep(othertextlabel.getText() + " label is displayed", "Pass");
 			WebElement othertextbox = driver
 					.findElement(By.xpath("//input[contains(@class,'js-text-full text-full')]"));
-			verifyDisplayed(othertextbox);
+			othertextbox.isDisplayed();
 			reportStep("What is your role? text box is displayed", "Pass");
 		} else {
 			reportStep("What is your role? text box and label is not displayed", "Fail");
@@ -323,7 +331,7 @@ public class Icivics_EducatorReg2 extends ProjectSpecificMethods {
 		click(driver.findElement(By.xpath("//button[.='Next']")));
 		
 		WebElement errormsgbox = driver.findElement(By.xpath("//div[@role='alert']"));
-		if (verifyDisplayed(errormsgbox)) {
+		if (errormsgbox.isDisplayed()) {
 			reportStep("Error msg box Is displayed", "Pass");
 			verifyExactText(propElement("XPATH&//li[@class='item item--message'][1]"), "Role is required for teacher.");
 			verifyExactText(propElement("XPATH&//li[@class='item item--message'][2]"),
@@ -342,7 +350,7 @@ public class Icivics_EducatorReg2 extends ProjectSpecificMethods {
 		click(driver.findElement(By.xpath("//button[.='Next']")));
 		
 		WebElement errormsgbox = driver.findElement(By.xpath("//div[@role='alert']"));
-		if (verifyDisplayed(errormsgbox)) {
+		if (errormsgbox.isDisplayed()) {
 			reportStep("Error msg box Is displayed", "Pass");
 			verifyExactText(propElement("XPATH&//li[@class='item item--message'][1]"),
 					"What is your role? field is required.");

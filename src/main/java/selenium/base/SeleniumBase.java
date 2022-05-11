@@ -1938,13 +1938,12 @@ public class SeleniumBase extends Reporter implements Browser, Element {
 			String element = "return window.getComputedStyle(document.querySelector('" + cssvalue
 					+ "'),'::before').getPropertyValue('" + value + "')";
 			String backcolor = (String) js.executeScript(element);
-			Assert.assertEquals(backcolor, rgbvalue);
-			System.out.println(backcolor);
+			Assert.assertEquals(backcolor, rgbvalue);			
 			if(backcolor.equals("rgb(0, 178, 124)")) {
-			reportStep("The breadcrumbs back color is Green color", "PASS");
+			System.out.println("breadcrumbs back color is Green");
 			}
 			else {
-				reportStep("The breadcrumbs back color is Grey color", "PASS");
+				System.out.println("breadcrumbs back color is Grey");
 			}
 		} catch (Exception e) {
 			Log.fatal("The backcolor is not " +rgbvalue + " :" + e.toString());
