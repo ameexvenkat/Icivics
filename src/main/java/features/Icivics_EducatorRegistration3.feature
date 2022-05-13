@@ -2,7 +2,7 @@ Feature: Educator Registration ValidationPage3
 
 Scenario: C348 - Can you tell which page you are currently viewing in the breadcrumbs?
 Given Launch the icivis educatorregistration URL
-Then verify Current page count and print
+Then verify Current page count 3 and print
 
 Scenario: C349 - Can you select Back to proceed to the previous page?
 Given Verify clicking on back button will take to previous page 2
@@ -14,7 +14,7 @@ When Verify Role is remembered.
 Scenario: C351 - Do you see fields for School or Institution, Zip Code, and Teaching State?
 Given User on Page 3, Verify School or institution field is displayed
 When User on Page 3, Verify Zip Code field is displayed
-And User on Page 3, Verify Teaching State dropdown
+And User on Page 3, Verify Teaching State dropdown is displayed
 And Verify options in the Teaching State dropdown
 
 Scenario: C352 - Can you enter text/make a selection for all fields?

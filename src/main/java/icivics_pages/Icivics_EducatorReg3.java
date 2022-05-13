@@ -84,7 +84,7 @@ public class Icivics_EducatorReg3 extends ProjectSpecificMethods {
 		return this;
 	}
 
-	@Given("verify Current page count and print")
+	@Given("verify Current page count 3 and print")
 	public Icivics_EducatorReg3 verifypagecount3() throws IOException {
 		String propname = "educatorregistration";
 		String cssvalue = "background-color";
@@ -196,7 +196,7 @@ public class Icivics_EducatorReg3 extends ProjectSpecificMethods {
 		return this;
 	}
 		
-	@And("User on Page 3, Verify Teaching State dropdown")
+	@And("User on Page 3, Verify Teaching State dropdown is displayed")
 	public Icivics_EducatorReg3 verifypage3TeachingStatefield() {
 		WebElement teachingstatelabel = driver.findElement(By.xpath("(//label[contains(@class,'control-label js-form-required')])[1]"));
 		WebElement teachingstatedropdown = driver.findElement(By.xpath("//select[contains(@class,'form-select required')]"));

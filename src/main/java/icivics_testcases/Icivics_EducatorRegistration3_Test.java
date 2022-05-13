@@ -43,8 +43,7 @@ public class Icivics_EducatorRegistration3_Test extends ProjectSpecificMethods {
 				.verifyroleremembered();
 	}
 
-	// C351 - Do you see fields for School or Institution, Zip Code, and Teaching
-	// State?
+	// C351 - Do you see fields for School or Institution, Zip Code, and Teaching State?
 	@Test(dataProvider = "fetchData", priority = 3)
 	public void C351_verifyallpage3fields(String URL) throws IOException, InterruptedException {
 		node = test.createNode("C351 - Do you see fields for School or Institution, Zip Code, and Teaching State?");

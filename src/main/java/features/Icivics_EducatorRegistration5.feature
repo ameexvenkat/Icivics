@@ -1,15 +1,20 @@
 Feature: Educator Registration ValidationPage5
 
-Scenario:Can you tell which page you are currently viewing in the breadcrumbs?
+Scenario: C372 - Can you tell which page you are currently viewing in the breadcrumbs?
+Given Launch the icivis educatorregistration URL
+Then verify Current page count 5 and print
 
+Scenario: C373 - Do you see a notification that a welcome message has been sent to your email address?
+Given verify Message says check your inbox
 
-Scenario: Do you see a notification that a welcome message has been sent to your email address?
-Then verify the message
+Scenario: C374 - Do you see text that your confirmation email is on the way?
+Given  Verify Message says confirmation email is on its way
 
-Scenario: Do you see text that your confirmation email is on the way?
-Then:  Verify Message says confirmation email is on its way
+Scenario: C375 - Is your email displayed on the page?
+Given Message has correct email from what was registered
 
-Scenario: Is your email displayed on the page?
+Scenario: C376 - Can you select a button to resend your confirmation email?
+And Verify resend button is clickable
 
-Scenario: Can you select a button to resend your confirmation email?
-And Verifybutton is clickable
+Scenario: C377 - Do you see a notification when the email has been resent?
+And Verify Screen shows confirmation email has been sent

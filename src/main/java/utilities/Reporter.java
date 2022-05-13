@@ -41,6 +41,7 @@ public abstract class Reporter extends AbstractTestNGCucumberTests{
 		reporter = new ExtentHtmlReporter(file.toString()+"./result.html");
 		reporter.config().setChartVisibilityOnOpen(false);
 		reporter.config().setDocumentTitle("ICIVICS TEST REPORT");
+		reporter.config().setReportName("ICIVICS AUTOMATION DASHBOARD");
 		reporter.setAppendExisting(true); 
 		extent = new ExtentReports();
 		extent.attachReporter(reporter);

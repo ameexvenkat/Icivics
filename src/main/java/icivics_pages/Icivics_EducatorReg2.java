@@ -67,7 +67,7 @@ public class Icivics_EducatorReg2 extends ProjectSpecificMethods {
 		return this;
 	}
 
-	@Given("verify Current page count and print")
+	@Given("verify Current page count 2 and print")
 	public Icivics_EducatorReg2 verifypagecount2() throws IOException {
 		String propname = "educatorregistration";
 		String cssvalue = "background-color";

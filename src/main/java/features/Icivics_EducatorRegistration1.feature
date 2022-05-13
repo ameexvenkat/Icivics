@@ -2,7 +2,7 @@ Feature: Educator Registration Page1 Validation
 
 Scenario: C327 - Can you tell which page you are currently viewing in the breadcrumbs?
 Given Launch the icivis educatorregistration URL
-Then verify Current page count and print
+Then verify Current page count 1 and print
 
 Scenario: C328 - Do you see fields for Username, First Name, Last Name, E-mail address, and Verify email address
 Given Verify the Username text fields

@@ -30,7 +30,7 @@ public class Icivics_EducatorReg1 extends ProjectSpecificMethods {
 		return this;
 	}
 
-	@Then("verify Current page count and print")
+	@Then("verify Current page count 1 and print")
 	public Icivics_EducatorReg1 verifypagecount1() throws IOException {
 		String propname = "educatorregistration";
 		String cssvalue = "background-color";
