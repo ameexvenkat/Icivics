@@ -3,7 +3,6 @@ package icivics_pages;
 import java.io.IOException;
 import java.util.Properties;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.InvalidElementStateException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -17,6 +16,8 @@ import cucumber.api.java.en.When;
 import projectSpecific.base.ProjectSpecificMethods;
 
 public class Icivics_EducatorReg1 extends ProjectSpecificMethods {
+	public String gpropname = "EducatorRegistration/educatorregistration";
+	public String lpropname = "EducatorRegistration/educatorregistration1";
 
 	public Icivics_EducatorReg1(RemoteWebDriver driver, ExtentTest node, Properties prop) {
 		this.driver = driver;
@@ -32,16 +33,15 @@ public class Icivics_EducatorReg1 extends ProjectSpecificMethods {
 
 	@Then("verify Current page count 1 and print")
 	public Icivics_EducatorReg1 verifypagecount1() throws IOException {
-		String propname = "educatorregistration";
 		String cssvalue = "background-color";
 		String Greycolor = "rgb(88, 89, 91)";
 		String Greencolor = "rgb(0, 178, 124)";
 
-		String Step1 = cssgetbefore(getPropfile(propname, "step1ele"), cssvalue, Greencolor);
-		String Step2 = cssgetbefore(getPropfile(propname, "step2ele"), cssvalue, Greycolor);
-		String Step3 = cssgetbefore(getPropfile(propname, "step3ele"), cssvalue, Greycolor);
-		String Step4 = cssgetbefore(getPropfile(propname, "step4ele"), cssvalue, Greycolor);
-		String Step5 = cssgetbefore(getPropfile(propname, "step5ele"), cssvalue, Greycolor);
+		String Step1 = cssgetbefore(getPropfile(gpropname, "step1ele"), cssvalue, Greencolor);
+		String Step2 = cssgetbefore(getPropfile(gpropname, "step2ele"), cssvalue, Greycolor);
+		String Step3 = cssgetbefore(getPropfile(gpropname, "step3ele"), cssvalue, Greycolor);
+		String Step4 = cssgetbefore(getPropfile(gpropname, "step4ele"), cssvalue, Greycolor);
+		String Step5 = cssgetbefore(getPropfile(gpropname, "step5ele"), cssvalue, Greycolor);
 
 		if (Step1.equals(Greencolor) && Step2.equals(Greycolor) && Step3.equals(Greycolor) && Step4.equals(Greycolor)
 				&& Step5.equals(Greycolor)) {
@@ -54,15 +54,14 @@ public class Icivics_EducatorReg1 extends ProjectSpecificMethods {
 	}
 
 	@Given("Verify the Username text fields")
-	public Icivics_EducatorReg1 Verifyusernametextfields() {
-		WebElement usernamelabel = driver.findElement(By.xpath("//span[text()='Username:']"));
-		// verifyDisplayed(usernamelabel);
+	public Icivics_EducatorReg1 Verifyusernametextfields() throws IOException {
+		WebElement usernamelabel = propElement(getPropfile(gpropname, "usernamelabel"));
 		if (usernamelabel.isDisplayed()) {
 			reportStep("Username label is displayed", "Pass");
 		} else {
 			reportStep("Username label box is not displayed", "Fail");
 		}
-		WebElement username = driver.findElement(By.xpath("//span[@class='name-value']"));
+		WebElement username = propElement(getPropfile(gpropname, "username"));
 		if (username.isDisplayed()) {
 			reportStep("username field is displayed", "Pass");
 		} else {
@@ -77,9 +76,9 @@ public class Icivics_EducatorReg1 extends ProjectSpecificMethods {
 	}
 
 	@Then("Verify the First Name text fields")
-	public Icivics_EducatorReg1 Verifyfirstnamenametextfields() {
+	public Icivics_EducatorReg1 Verifyfirstnamenametextfields() throws IOException {
 
-		WebElement firstnamelabel = driver.findElement(By.xpath("//label[text()='First Name']"));
+		WebElement firstnamelabel =  propElement(getPropfile(gpropname, "firstnamelabel"));
 		
 		if (firstnamelabel.isDisplayed()) {
 			reportStep("First name label is displayed", "Pass");
@@ -87,8 +86,7 @@ public class Icivics_EducatorReg1 extends ProjectSpecificMethods {
 			reportStep("First name label box is not displayed", "Fail");
 		}
 		
-		WebElement firstname = driver
-				.findElement(By.xpath("(//input[@class='js-text-full text-full form-text required form-control'])[1]"));
+		WebElement firstname = propElement(getPropfile(gpropname, "firstname"));
 		if (firstname.isDisplayed()) {
 
 			reportStep("Firstname field is displayed", "Pass");
@@ -109,17 +107,16 @@ public class Icivics_EducatorReg1 extends ProjectSpecificMethods {
 	}
 
 	@And("Verify the Last Name text fields")
-	public Icivics_EducatorReg1 Verifylastnametextfields() {
+	public Icivics_EducatorReg1 Verifylastnametextfields() throws IOException {
 
-		WebElement Lastnamelabel = driver.findElement(By.xpath("//label[text()='Last Name']"));
+		WebElement Lastnamelabel = propElement(getPropfile(gpropname, "Lastnamelabel"));
 		if (Lastnamelabel.isDisplayed()) {
 			reportStep("Lastname label is displayed", "Pass");
 		} else {
 			reportStep("Lastname label box is not displayed", "Fail");
 		}
 		
-		WebElement lastname = driver
-				.findElement(By.xpath("(//input[@class='js-text-full text-full form-text required form-control'])[2]"));
+		WebElement lastname = propElement(getPropfile(gpropname, "Lastname"));
 		if (lastname.isDisplayed()) {
 
 			reportStep("Lastname field is displayed", "Pass");
@@ -127,9 +124,7 @@ public class Icivics_EducatorReg1 extends ProjectSpecificMethods {
 			reportStep("Lastname field is not displayed", "Fail");
 		}
 		
-		WebElement Lastname = driver
-				.findElement(By.xpath("//*[@id='edit-main-profiles-0-entity-field-last-name-0-value']"));
-		String CLbox = Lastname.getAttribute("value");
+		String CLbox = lastname.getAttribute("value");
 		if (CLbox.isEmpty()) {
 			reportStep("Last name text box is Blank", "Pass");
 		} else {
@@ -139,16 +134,16 @@ public class Icivics_EducatorReg1 extends ProjectSpecificMethods {
 	}
 
 	@And("Verify the E-mail text fields")
-	public Icivics_EducatorReg1 Verifyemailtextfields() {
+	public Icivics_EducatorReg1 Verifyemailtextfields() throws IOException {
 
-		WebElement Emailaddresslabel = driver.findElement(By.xpath("//label[text()='Email address']"));
+		WebElement Emailaddresslabel = propElement(getPropfile(gpropname, "Emailaddresslabel"));
 		if (Emailaddresslabel.isDisplayed()) {
 			reportStep("Emailaddress label is displayed", "Pass");
 		} else {
 			reportStep("Emailaddress label box is not displayed", "Fail");
 		}
 		
-		WebElement email = driver.findElement(By.xpath("(//input[@class='form-email required form-control'])[1]"));
+		WebElement email = propElement(getPropfile(gpropname, "Emailaddress"));
 		if (email.isDisplayed()) {
 
 			reportStep("email field is displayed", "Pass");
@@ -156,8 +151,7 @@ public class Icivics_EducatorReg1 extends ProjectSpecificMethods {
 			reportStep("email field is not displayed", "Fail");
 		}
 		
-		WebElement Emailaddress = driver.findElement(By.xpath("//*[@id='edit-mail']"));
-		String CLbox = Emailaddress.getAttribute("value");
+		String CLbox = email.getAttribute("value");
 		if (CLbox.isEmpty()) {
 			reportStep("Emailaddress text box is Blank", "Pass");
 		} else {
@@ -168,25 +162,24 @@ public class Icivics_EducatorReg1 extends ProjectSpecificMethods {
 	}
 
 	@And("Verify the Verify E-mail text fields")
-	public Icivics_EducatorReg1 Verifyemail2textfields() {
+	public Icivics_EducatorReg1 Verifyemail2textfields() throws IOException {
 		
-		WebElement VerifyEmailaddresslabel = driver.findElement(By.xpath("//label[text()='Verify email address']"));
+		WebElement VerifyEmailaddresslabel = propElement(getPropfile(gpropname, "VerifyEmailaddresslabel"));
 		if (VerifyEmailaddresslabel.isDisplayed()) {
 			reportStep("VerifyEmailaddress label is displayed", "Pass");
 		} else {
 			reportStep("VerifyEmailaddress label box is not displayed", "Fail");
 		}
 		
-		WebElement verifyemail = driver
-				.findElement(By.xpath("(//input[@class='form-email required form-control'])[2]"));
+		WebElement verifyemail = propElement(getPropfile(gpropname, "VerifyEmailaddress"));
 		if (verifyemail.isDisplayed()) {
 
 			reportStep("verifyemail field is displayed", "Pass");
 		} else {
 			reportStep("verifyemail field is not displayed", "Fail");
 		}
-		WebElement VerifyEmailaddress = driver.findElement(By.xpath("//*[@id='edit-conf-mail']"));
-		String CLbox = VerifyEmailaddress.getAttribute("value");
+		
+		String CLbox = verifyemail.getAttribute("value");
 		if (CLbox.isEmpty()) {
 			reportStep("VerifyEmailaddress text box is Blank", "Pass");
 		} else {
@@ -196,8 +189,8 @@ public class Icivics_EducatorReg1 extends ProjectSpecificMethods {
 	}
 
 	@Given("Verify username is pregenerated")
-	public Icivics_EducatorReg1 usernamepregenerated() throws InterruptedException {
-		WebElement username = driver.findElement(By.xpath("//span[@class='name-value']"));
+	public Icivics_EducatorReg1 usernamepregenerated() throws InterruptedException, IOException {
+		WebElement username = propElement(getPropfile(gpropname, "username"));
 		waitTime(6000);
 		String username1 = username.getText();
 
@@ -210,12 +203,12 @@ public class Icivics_EducatorReg1 extends ProjectSpecificMethods {
 	}
 	
 	@Given("Verify New username is randomly generated and appears in the box")
-	public Icivics_EducatorReg1 usernamegeneratedrandomly() throws InterruptedException {
-		WebElement username = driver.findElement(By.xpath("//span[@class='name-value']"));
+	public Icivics_EducatorReg1 usernamegeneratedrandomly() throws InterruptedException, IOException {
+		WebElement username = propElement(getPropfile(gpropname, "username"));
 		waitTime(6000);
 		String username1 = username.getText();
 		System.out.println(username1);
-		driver.findElement(By.xpath("//span[@class='icon reload']//i[1]")).click();
+		propElement(getPropfile(gpropname, "reloadicon")).click();
 		waitTime(6000);
 		String username2 = username.getText();
 		System.out.println(username2);
@@ -230,10 +223,10 @@ public class Icivics_EducatorReg1 extends ProjectSpecificMethods {
 	}
 	
 	@Given("Verify username is enabled and user able to enter text in username field")
-	public Icivics_EducatorReg1 entertextinusernamefield() throws InterruptedException {
-		WebElement username = driver.findElement(By.xpath("//span[@class='name-value']"));
+	public Icivics_EducatorReg1 entertextinusernamefield() throws InterruptedException, IOException {
+		WebElement username = propElement(getPropfile(gpropname, "username"));
 		try{
-			clearAndType(username, "Tripti");}
+			clearAndType(username, getPropfile(lpropname, "UserName"));}
 		catch (InvalidElementStateException e){
 			reportStep("The Element is not Interactable", "Pass");
 		}
@@ -247,39 +240,47 @@ public class Icivics_EducatorReg1 extends ProjectSpecificMethods {
 	}
 
 	@Then("Verify typing text allowed in firstname field")
-	public Icivics_EducatorReg1 entertextinfirstnamefield() throws InterruptedException {
-		WebElement firstname = propElement(
-				"XPATH&(//input[@class='js-text-full text-full form-text required form-control'])[1]");
-		clearAndType(firstname, "Tripti");
+	public Icivics_EducatorReg1 entertextinfirstnamefield() throws InterruptedException, IOException {
+		WebElement firstname = propElement(getPropfile(gpropname, "firstname"));
+		clearAndType(firstname, getPropfile(lpropname, "FirstName"));
 		return this;
 	}
 	
 	@And("Verify typing text allowed in lastname field")
-	public Icivics_EducatorReg1 entertextinlastnamefield() throws InterruptedException {
-		WebElement lastname = propElement(
-				"XPATH&(//input[@class='js-text-full text-full form-text required form-control'])[2]");
-		clearAndType(lastname, "Gupta");
+	public Icivics_EducatorReg1 entertextinlastnamefield() throws InterruptedException, IOException {
+		WebElement lastname = propElement(getPropfile(gpropname, "Lastname"));
+		clearAndType(lastname, getPropfile(lpropname, "LastName"));
 		return this;
 	}
 	
 	@And("Verify typing text allowed in email field")
-	public Icivics_EducatorReg1 entertextinemailfield() throws InterruptedException {
-		WebElement email = propElement("XPATH&(//input[@class='form-email required form-control'])[1]");
-		clearAndType(email, "tripti.gupta@ameexusa.com");
+	public Icivics_EducatorReg1 entertextinemailfield() throws InterruptedException, IOException {
+		String EmailId = getPropfile(lpropname, "EmailID");
+		
+		long number = (long) Math.floor(Math.random() * 900000000L) + 10000000L;
+		String[] data = EmailId.split("@");
+		String name = data[0];
+		String host = data[1];
+		String emailId = name + number + "@" + host;
+		
+		writePropfile("EducatorRegistration/email", "email", emailId);
+		WebElement emailele = propElement(getPropfile(gpropname, "Emailaddress"));
+		clearAndType(emailele, emailId);
 		return this;
 		}
 	
 	@And("Verify typing text allowed in Verify email field")
-	public Icivics_EducatorReg1 entertextinverifyemailfield() throws InterruptedException {
-		WebElement verifyemail = propElement("XPATH&(//input[@class='form-email required form-control'])[2]");
-		clearAndType(verifyemail, "tripti.gupta@ameexusa.com");
+	public Icivics_EducatorReg1 entertextinverifyemailfield() throws InterruptedException, IOException {
+		String email1 = getPropfile("email", "email");
+		WebElement verifyemail = propElement(getPropfile(gpropname, "VerifyEmailaddress"));
+		clearAndType(verifyemail, email1);
 		return this;
 	}
 
 	@Given("Verify username is not marked with an asterisk")
 	public Icivics_EducatorReg1 usernameAsteriks() throws IOException {
-		WebElement username = driver.findElement(By.xpath("(//div[@class='form-item']//span)[1]"));
-		if(!username.getText().contains("*"))
+		WebElement usernamelabel = propElement(getPropfile(gpropname, "usernamelabel"));
+		if(!usernamelabel.getText().contains("*"))
 		{
 			reportStep("* is not present in the username label", "Pass");	
 		}else {
@@ -290,38 +291,38 @@ public class Icivics_EducatorReg1 extends ProjectSpecificMethods {
 	
 	@Then("Verify firstname is marked with an asterisk")
 	public Icivics_EducatorReg1 firstnameAsteriks() throws IOException {
-		cssgetafter(getPropfile("educatorregistration", "edureg.fn*"), "content", "\"*\"");
+		cssgetafter(getPropfile(gpropname, "edureg.fn*"), "content", "\"*\"");
 		reportStep("* is present in the firstname label", "Pass");
 		return this;
 	}
 	
 	@And("Verify lastname is marked with an asterisk")
 	public Icivics_EducatorReg1 lastnameAsteriks() throws IOException {
-		cssgetafter(getPropfile("educatorregistration", "edureg.ln*"), "content", "\"*\"");
+		cssgetafter(getPropfile(gpropname, "edureg.ln*"), "content", "\"*\"");
 		reportStep("* is present in the lastname label", "Pass");
 		return this;
 	}
 		
 	@And("Verify email is marked with an asterisk")
 	public Icivics_EducatorReg1 emailAsteriks() throws IOException {
-		cssgetafter(getPropfile("educatorregistration", "edureg.email*"), "content", "\"*\"");
+		cssgetafter(getPropfile(gpropname, "edureg.email*"), "content", "\"*\"");
 		reportStep("* is present in the email label", "Pass");
 		return this;
 	}
 			
 	@And("Verify verify email is marked with an asterisk")
 	public Icivics_EducatorReg1 verifyemailAsteriks() throws IOException {
-	cssgetafter(getPropfile("educatorregistration", "edureg.verifyemail*"), "content", "\"*\"");
+	cssgetafter(getPropfile(gpropname, "edureg.verifyemail*"), "content", "\"*\"");
 	reportStep("* is present in the verify email label", "Pass");
 	return this;
 	}
 
 	@Given("verify the Tooltip Text by Hovering on email field")
-	public Icivics_EducatorReg1 hoveronemailfield() throws InterruptedException {
-		String email = "XPATH&(//input[@type='email'])[1]";
+	public Icivics_EducatorReg1 hoveronemailfield() throws InterruptedException, IOException {
+		String email = getPropfile(gpropname, "Emailaddress");
 		mouseOverAction(email);
 		WebElement emailtooltip = propElement(email);
-		String ExpectedTooltip = "A valid email address. All emails from the system will be sent to this address. The email address is not made public and will only be used if you wish to receive a new password or wish to receive certain news or notifications by email.";
+		String ExpectedTooltip = getPropfile(gpropname, "EmailTooltip");
 		String actualTooltip = emailtooltip.getAttribute("data-original-title");
 		if(actualTooltip.equals(ExpectedTooltip)) {
 			reportStep("Expected Tooltip and Actual Tooltip text matched successfully", "Pass");
@@ -331,17 +332,16 @@ public class Icivics_EducatorReg1 extends ProjectSpecificMethods {
 		}
 		
 	@Then("verify the Tooltip Text by Hovering on verify email field")
-	public Icivics_EducatorReg1 hoveronverifyemailfield() throws InterruptedException {
-		String verifyemail = "XPATH&(//input[@type='email'])[2]";
-		mouseOverAction(verifyemail);
+	public Icivics_EducatorReg1 hoveronverifyemailfield() throws InterruptedException, IOException {
+		mouseOverAction(getPropfile(gpropname, "VerifyEmailaddress"));
 		reportStep("No Tool Tip present for Verifyemail text box", "Pass");
 		return this;
 	}
 
 
 	@Given("Enter invalid first name")
-	public Icivics_EducatorReg1 Enterinvalidfirstname() throws InterruptedException {
-		WebElement firstname = driver.findElement(By.xpath("(//input[@class='js-text-full text-full form-text required form-control'])[1]"));
+	public Icivics_EducatorReg1 Enterinvalidfirstname() throws InterruptedException, IOException {
+		WebElement firstname = propElement(getPropfile(gpropname, "firstname"));
 		if (firstname.isDisplayed()) {
 			firstname.clear();
 			firstname.sendKeys("14344433%");
@@ -353,9 +353,8 @@ public class Icivics_EducatorReg1 extends ProjectSpecificMethods {
 	}
 
 	@And("Enter invalid last name")
-	public Icivics_EducatorReg1 Enterinvalidlastname() throws InterruptedException {
-		WebElement lastname = driver
-				.findElement(By.xpath("(//input[@class='js-text-full text-full form-text required form-control'])[2]"));
+	public Icivics_EducatorReg1 Enterinvalidlastname() throws InterruptedException, IOException {
+		WebElement lastname = propElement(getPropfile(gpropname, "Lastname"));
 		if (lastname.isDisplayed()) {
 			lastname.clear();
 			lastname.sendKeys("%ttt#12");
@@ -368,7 +367,7 @@ public class Icivics_EducatorReg1 extends ProjectSpecificMethods {
 
 	@And("Enter invalid email")
 	public Icivics_EducatorReg1 Enterinvalidemailfield() throws InterruptedException {
-		WebElement email = driver.findElement(By.xpath("(//input[@class='form-email required form-control'])[1]"));
+		WebElement email = propElement(getPropfile(gpropname, "Emailaddress"));
 		if (email.isDisplayed()) {
 			email.clear();
 			email.sendKeys("gdfsgadvjh");
@@ -381,8 +380,7 @@ public class Icivics_EducatorReg1 extends ProjectSpecificMethods {
 
 	@And("Enter Invalid verify Email")
 	public Icivics_EducatorReg1 Enterinvalidverifyemailfield() throws InterruptedException {
-		WebElement verifyemail = driver
-				.findElement(By.xpath("(//input[@class='form-email required form-control'])[2]"));
+		WebElement verifyemail = propElement(getPropfile(gpropname, "VerifyEmailaddress"));
 		if (verifyemail.isDisplayed()) {
 			verifyemail.clear();
 			Thread.sleep(3000);
@@ -396,14 +394,14 @@ public class Icivics_EducatorReg1 extends ProjectSpecificMethods {
 
 	@And("click on next button")
 	public Icivics_EducatorReg1 clicknextbutton() {
-		scrollToTheGivenWebElement("XPATH&//label[text()='Email address']");
-		clickOn("XPATH&(//button[@type='submit'])[1]");
+		scrollToTheGivenWebElement(getPropfile(gpropname, "Emailaddresslabel"));
+		clickOn(getPropfile(gpropname, "nextbutton"));
 		return this;
 	}
 	
 	@But("error message should be displayed for email and verify email")
 	public Icivics_EducatorReg1 verifyerrormsgforinvaliddatasubmit() {
-		WebElement alertmsg = driver.findElement(By.xpath("//div[@role='alert']//p[1]"));
+		WebElement alertmsg = propElement(getPropfile(gpropname, "alertpopup1"));
 		String Actualerrmsg = alertmsg.getText();
 		String Expectederrmsg = "2 errors have been found:";
 		verifyPartialText(alertmsg, "2 errors have been found:");
@@ -411,13 +409,13 @@ public class Icivics_EducatorReg1 extends ProjectSpecificMethods {
 			reportStep("Error alert message is displayed", "Pass");
 		}
 		
-		WebElement emailerrormsg = driver.findElement(By.xpath("//label[text()='Email address']/following-sibling::div"));
+		WebElement emailerrormsg = propElement(getPropfile(gpropname, "emailinvalidalert1"));
 		if(emailerrormsg.getText().contains("The email address gdfsgadvjh is not valid.")) {
-			scrollToTheGivenWebElement("XPATH&//label[text()='Email address']");
+			scrollToTheGivenWebElement(getPropfile(gpropname, "Emailaddresslabel"));
 			reportStep(emailerrormsg.getText() + " is displayed", "Pass");
 		}
 		
-		WebElement verifyemailerrormsg = driver.findElement(By.xpath("//label[text()='Verify email address']/following-sibling::div"));
+		WebElement verifyemailerrormsg = propElement(getPropfile(gpropname, "verifyemailinvalidalert1"));
 		if(verifyemailerrormsg.getText().contains("The email address gdfsgadvjh is not valid.")) {
 		reportStep(verifyemailerrormsg.getText() + " is displayed", "Pass");
 		}
@@ -426,35 +424,33 @@ public class Icivics_EducatorReg1 extends ProjectSpecificMethods {
 
 	@Given("Verify error message for all required field by leaving the fields blank and click on next button")
 	public Icivics_EducatorReg1 verifyerrormsgblankfieldall() throws InterruptedException {
-		WebElement firstname = driver.findElement(By.xpath("(//input[contains(@class,'js-text-full text-full')])[1]"));
+		WebElement firstname = propElement(getPropfile(gpropname, "firstname"));
 		firstname.clear();
-		WebElement lastname = driver.findElement(By.xpath("(//input[contains(@class,'js-text-full text-full')])[2]"));
+		WebElement lastname = propElement(getPropfile(gpropname, "Lastname"));
 		lastname.clear();
-		WebElement email = driver.findElement(By.xpath("(//input[@type='email'])[1]"));
+		WebElement email = propElement(getPropfile(gpropname, "Emailaddress"));
 		email.clear();
-		WebElement verifyemail = driver.findElement(By.xpath("(//input[@type='email'])[2]"));
+		WebElement verifyemail = propElement(getPropfile(gpropname, "VerifyEmailaddress"));
 		verifyemail.clear();
 		
-		scrollToTheGivenWebElement("XPATH&//button[contains(@class,'icon-before button')]");
-		clickOn("XPATH&//button[contains(@class,'icon-before button')]");
+		scrollToTheGivenWebElement(getPropfile(gpropname, "nextbutton"));
+		clickOn(getPropfile(gpropname, "nextbutton"));
 
-		WebElement firstnamealertmsg = driver.findElement(By.xpath("(//li[@class='item item--message'])[1]"));
+		WebElement firstnamealertmsg = propElement(getPropfile(gpropname, "firstnamealertmsg1"));
 		verifyExactText(firstnamealertmsg, "Field First Name is required");
 
-		WebElement lastnamealertmsg = driver.findElement(By.xpath("(//li[@class='item item--message'])[2]"));
+		WebElement lastnamealertmsg = propElement(getPropfile(gpropname, "lastnamealertmsg1"));
 		verifyExactText(lastnamealertmsg, "Field Last Name is required");
 
-		WebElement alertmsg = driver.findElement(By.xpath("(//li[@class='item item--message'])[3]"));
+		WebElement alertmsg = propElement(getPropfile(gpropname, "alertmsg1"));
 		verifyPartialText(alertmsg, "2 errors have been found:");
 		
-		scrollToTheGivenWebElement("XPATH&//label[text()='Email address']");
+		scrollToTheGivenWebElement(getPropfile(gpropname, "Emailaddresslabel"));
 
-		WebElement emailalertmsg = driver
-				.findElement(By.xpath("(//div[@class='form-item--error-message alert alert-danger alert-sm'])[1]"));
+		WebElement emailalertmsg = propElement(getPropfile(gpropname, "emailalertmsg"));
 		verifyPartialText(emailalertmsg, "Email address field is required.");
 
-		WebElement verifyemailalertmsg = driver
-				.findElement(By.xpath("(//div[@class='form-item--error-message alert alert-danger alert-sm'])[2]"));
+		WebElement verifyemailalertmsg = propElement(getPropfile(gpropname, "verifyemailalertmsg"));
 		verifyPartialText(verifyemailalertmsg, "Verify email address field is required.");
 
 		return this;
@@ -462,22 +458,22 @@ public class Icivics_EducatorReg1 extends ProjectSpecificMethods {
 	
 	@When("Verify error message by leaving the Firstname field blank and enter values in the remaining required fields and click on next button")
 	public Icivics_EducatorReg1 verifyerrormsgfirstnameblankfield() throws InterruptedException {
-		WebElement firstname = driver.findElement(By.xpath("(//input[contains(@class,'js-text-full text-full')])[1]"));
+		WebElement firstname = propElement(getPropfile(gpropname, "firstname"));
 		firstname.clear();
-		WebElement lastname = driver.findElement(By.xpath("(//input[contains(@class,'js-text-full text-full')])[2]"));
+		WebElement lastname = propElement(getPropfile(gpropname, "Lastname"));
 		lastname.clear();
-		lastname.sendKeys("Gupta");
-		WebElement email = driver.findElement(By.xpath("(//input[@type='email'])[1]"));
-		email.clear();
-		email.sendKeys("Gupta@gmail.com");
-		WebElement verifyemail = driver.findElement(By.xpath("(//input[@type='email'])[2]"));
-		verifyemail.clear();
-		verifyemail.sendKeys("Gupta@gmail.com");
+		lastname.sendKeys(getPropfile(lpropname, "LastName"));
+		WebElement emailele = propElement(getPropfile(gpropname, "Emailaddress"));
+		emailele.clear();
+		emailele.sendKeys(getPropfile(lpropname, "EmailID"));
+		WebElement verifyemailele = propElement(getPropfile(gpropname, "VerifyEmailaddress"));
+		verifyemailele.clear();
+		verifyemailele.sendKeys(getPropfile(lpropname, "VerifyEmailID"));
 		
-		scrollToTheGivenWebElement("XPATH&//button[contains(@class,'icon-before button')]");
-		clickOn("XPATH&//button[contains(@class,'icon-before button')]");
+		scrollToTheGivenWebElement(getPropfile(gpropname, "nextbutton"));
+		clickOn(getPropfile(gpropname, "nextbutton"));
 
-		WebElement firstnamealertmsg = driver.findElement(By.xpath("//div[@role='alert']//p[1]"));
+		WebElement firstnamealertmsg = propElement(getPropfile(gpropname, "alertpopup1"));
 		verifyExactText(firstnamealertmsg, "Field First Name is required");
 
 		return this;
@@ -486,22 +482,22 @@ public class Icivics_EducatorReg1 extends ProjectSpecificMethods {
 	
 	@And("Verify error message by leaving the Lastname field blank and enter values in the remaining required fields and click on next button")
 	public Icivics_EducatorReg1 verifyerrormsglastnameblankfield() throws InterruptedException {
-		WebElement firstname = driver.findElement(By.xpath("(//input[contains(@class,'js-text-full text-full')])[1]"));
+		WebElement firstname = propElement(getPropfile(gpropname, "firstname"));
 		firstname.clear();
-		firstname.sendKeys("Tripti");
-		WebElement lastname = driver.findElement(By.xpath("(//input[contains(@class,'js-text-full text-full')])[2]"));
+		firstname.sendKeys(getPropfile(lpropname, "FirstName"));
+		WebElement lastname = propElement(getPropfile(gpropname, "Lastname"));
 		lastname.clear();
-		WebElement email = driver.findElement(By.xpath("(//input[@type='email'])[1]"));
-		email.clear();
-		email.sendKeys("Gupta@gmail.com");
-		WebElement verifyemail = driver.findElement(By.xpath("(//input[@type='email'])[2]"));
-		verifyemail.clear();
-		verifyemail.sendKeys("Gupta@gmail.com");
+		WebElement emailele = propElement(getPropfile(gpropname, "Emailaddress"));
+		emailele.clear();
+		emailele.sendKeys(getPropfile(lpropname, "EmailID"));
+		WebElement verifyemailele = propElement(getPropfile(gpropname, "VerifyEmailaddress"));
+		verifyemailele.clear();
+		verifyemailele.sendKeys(getPropfile(lpropname, "VerifyEmailID"));
 		
-		scrollToTheGivenWebElement("XPATH&//button[contains(@class,'icon-before button')]");
-		clickOn("XPATH&//button[contains(@class,'icon-before button')]");
+		scrollToTheGivenWebElement(getPropfile(gpropname, "nextbutton"));
+		clickOn(getPropfile(gpropname, "nextbutton"));
 
-		WebElement lastnamealertmsg = driver.findElement(By.xpath("//div[@role='alert']//p[1]"));
+		WebElement lastnamealertmsg = propElement(getPropfile(gpropname, "alertpopup1"));
 		verifyExactText(lastnamealertmsg, "Field Last Name is required");
 
 		return this;
@@ -509,30 +505,30 @@ public class Icivics_EducatorReg1 extends ProjectSpecificMethods {
 	
 	@And("Verify error message by leaving the email field blank and enter values in the remaining required fields and click on next button")
 	public Icivics_EducatorReg1 verifyerrormsgemailblankfield() throws InterruptedException {
-		WebElement firstname = driver.findElement(By.xpath("(//input[contains(@class,'js-text-full text-full')])[1]"));
+		WebElement firstname = propElement(getPropfile(gpropname, "firstname"));
 		firstname.clear();
-		firstname.sendKeys("Tripti");
-		WebElement lastname = driver.findElement(By.xpath("(//input[contains(@class,'js-text-full text-full')])[2]"));
+		firstname.sendKeys(getPropfile(lpropname, "FirstName"));
+		WebElement lastname = propElement(getPropfile(gpropname, "Lastname"));
 		lastname.clear();
-		lastname.sendKeys("Gupta");
-		WebElement email = driver.findElement(By.xpath("(//input[@type='email'])[1]"));
+		lastname.sendKeys(getPropfile(lpropname, "LastName"));
+		WebElement email = propElement(getPropfile(gpropname, "Emailaddress"));
 		email.clear();
-		WebElement verifyemail = driver.findElement(By.xpath("(//input[@type='email'])[2]"));
-		verifyemail.clear();
-		verifyemail.sendKeys("Gupta@gmail.com");
+		WebElement verifyemailele = propElement(getPropfile(gpropname, "VerifyEmailaddress"));
+		verifyemailele.clear();
+		verifyemailele.sendKeys(getPropfile(lpropname, "VerifyEmailID"));
 		
-		scrollToTheGivenWebElement("XPATH&//button[contains(@class,'icon-before button')]");
-		clickOn("XPATH&//button[contains(@class,'icon-before button')]");
+		scrollToTheGivenWebElement(getPropfile(gpropname, "nextbutton"));
+		clickOn(getPropfile(gpropname, "nextbutton"));
 
-		WebElement alertmsg = driver.findElement(By.xpath("//div[@role='alert']//p[1]"));
+		WebElement alertmsg = propElement(getPropfile(gpropname, "alertpopup1"));
 		verifyPartialText(alertmsg, "2 errors have been found:");
 		
-		scrollToTheGivenWebElement("XPATH&//label[text()='Email address']");
+		scrollToTheGivenWebElement(getPropfile(gpropname, "Emailaddresslabel"));
 
-		WebElement emailalertmsg = driver.findElement(By.xpath("(//div[@class='form-item--error-message alert alert-danger alert-sm'])[1]"));
+		WebElement emailalertmsg = propElement(getPropfile(gpropname, "emailalertmsg"));
 		verifyPartialText(emailalertmsg, "Email address field is required.");
 
-		WebElement verifyemailalertmsg = driver.findElement(By.xpath("(//div[@class='form-item--error-message alert alert-danger alert-sm'])[2]"));
+		WebElement verifyemailalertmsg = propElement(getPropfile(gpropname, "verifyemailalertmsg"));
 		verifyPartialText(verifyemailalertmsg, "Your e-mail address and confirmed e-mail address must match.");
 		
 		return this;
@@ -540,30 +536,30 @@ public class Icivics_EducatorReg1 extends ProjectSpecificMethods {
 	
 	@And("Verify error message by leaving the verify email field blank and enter values in the remaining required fields and click on next button")
 	public Icivics_EducatorReg1 verifyerrormsgverifyemailblankfield() throws InterruptedException {
-		WebElement firstname = driver.findElement(By.xpath("(//input[contains(@class,'js-text-full text-full')])[1]"));
+		WebElement firstname = propElement(getPropfile(gpropname, "firstname"));
 		firstname.clear();
-		firstname.sendKeys("Tripti");
-		WebElement lastname = driver.findElement(By.xpath("(//input[contains(@class,'js-text-full text-full')])[2]"));
+		firstname.sendKeys(getPropfile(lpropname, "FirstName"));
+		WebElement lastname = propElement(getPropfile(gpropname, "Lastname"));
 		lastname.clear();
-		lastname.sendKeys("Gupta");
+		lastname.sendKeys(getPropfile(lpropname, "LastName"));
 		waitTime(5000);
-		WebElement email = driver.findElement(By.xpath("(//input[@type='email'])[1]"));
-		email.clear();
-		email.sendKeys("Gupta@gmail.com");
-		WebElement verifyemail = driver.findElement(By.xpath("(//input[@type='email'])[2]"));
+		WebElement emailele = propElement(getPropfile(gpropname, "Emailaddress"));
+		emailele.clear();
+		emailele.sendKeys(getPropfile(lpropname, "EmailID"));
+		WebElement verifyemail = propElement(getPropfile(gpropname, "VerifyEmailaddress"));
 		verifyemail.clear();
 		waitTime(5000);
 		
-		scrollToTheGivenWebElement("XPATH&//button[contains(@class,'icon-before button')]");
+		scrollToTheGivenWebElement(getPropfile(gpropname, "nextbutton"));
 		waitTime(3000);
-		clickOn("XPATH&//button[contains(@class,'icon-before button')]");
+		clickOn(getPropfile(gpropname, "nextbutton"));
 
-		WebElement alertmsg = driver.findElement(By.xpath("//div[@role='alert']//p[1]"));
+		WebElement alertmsg = propElement(getPropfile(gpropname, "alertpopup1"));
 		verifyPartialText(alertmsg, "1 error has been found:");
 		
-		scrollToTheGivenWebElement("XPATH&//label[text()='Email address']");
+		scrollToTheGivenWebElement(getPropfile(gpropname, "Emailaddresslabel"));
 
-		WebElement verifyemailalertmsg = driver.findElement(By.xpath("(//div[@class='form-item--error-message alert alert-danger alert-sm'])"));
+		WebElement verifyemailalertmsg = propElement(getPropfile(gpropname, "emailalertmsg"));
 		verifyPartialText(verifyemailalertmsg, "Verify email address field is required.");
 		
 		return this;
@@ -572,26 +568,26 @@ public class Icivics_EducatorReg1 extends ProjectSpecificMethods {
 	@Given("Verify all error messages for invalid inputs")
 	public Icivics_EducatorReg1 verifyinvaliderrormsg() throws InterruptedException {
 
-		WebElement firstname = driver.findElement(By.xpath("(//input[@class='js-text-full text-full form-text required form-control'])[1]"));
+		WebElement firstname = propElement(getPropfile(gpropname, "firstname"));
 		firstname.clear();
 		firstname.sendKeys("14344433%");
 		
-		WebElement lastname = driver.findElement(By.xpath("(//input[@class='js-text-full text-full form-text required form-control'])[2]"));
+		WebElement lastname = propElement(getPropfile(gpropname, "Lastname"));
 		lastname.clear();
 		lastname.sendKeys("%ttt#12");
 		
-		WebElement verifyemail = driver.findElement(By.xpath("(//input[@class='form-email required form-control'])[2]"));
-		verifyemail.clear();
-		verifyemail.sendKeys("GHDGFH!#!#!");
-			
-		WebElement email = driver.findElement(By.xpath("(//input[@class='form-email required form-control'])[1]"));
+		WebElement email = propElement(getPropfile(gpropname, "Emailaddress"));
 		email.clear();
 		email.sendKeys("GHDGFH!#!#!");
+		
+		WebElement verifyemail = propElement(getPropfile(gpropname, "VerifyEmailaddress"));
+		verifyemail.clear();
+		verifyemail.sendKeys("GHDGFH!#!#!");
 	
-		WebElement nextbutton = driver.findElement(By.xpath("//button[text()='Next']"));
+		WebElement nextbutton = propElement(getPropfile(gpropname, "nextbutton"));
 		nextbutton.click();
 		
-		WebElement alertmsg = driver.findElement(By.xpath("//div[@role='alert']//p[1]"));
+		WebElement alertmsg = propElement(getPropfile(gpropname, "alertpopup1"));
 		String Actualerrmsg = alertmsg.getText();
 		String Expectederrmsg = "2 errors have been found:";
 		verifyPartialText(alertmsg, "2 errors have been found:");
@@ -599,13 +595,13 @@ public class Icivics_EducatorReg1 extends ProjectSpecificMethods {
 			reportStep("Error alert message is displayed", "Pass");
 		}
 		
-		WebElement emailerrormsg = driver.findElement(By.xpath("//label[text()='Email address']/following-sibling::div"));
+		WebElement emailerrormsg = propElement(getPropfile(gpropname, "emailinvalidalert1"));
 		if(emailerrormsg.getText().contains("The email address GHDGFH!#!#! is not valid.")) {
-			scrollToTheGivenWebElement("XPATH&//label[text()='Email address']");
+			scrollToTheGivenWebElement(getPropfile(gpropname, "Emailaddresslabel"));
 			reportStep(emailerrormsg.getText() + " is displayed", "Pass");
 		}
 		
-		WebElement verifyemailerrormsg = driver.findElement(By.xpath("//label[text()='Verify email address']/following-sibling::div"));
+		WebElement verifyemailerrormsg = propElement(getPropfile(gpropname, "verifyemailinvalidalert1"));
 		if(verifyemailerrormsg.getText().contains("The email address GHDGFH!#!#! is not valid.")) {
 		reportStep(verifyemailerrormsg.getText() + " is displayed", "Pass");
 		}
@@ -617,38 +613,37 @@ public class Icivics_EducatorReg1 extends ProjectSpecificMethods {
 	@Given("Enter valid firstname, lastname, email, verifyemail and click on next and verify page 2 is loaded")
 	public Icivics_EducatorReg1 verifyregistrationwithvaliddata() throws InterruptedException, IOException {
 		waitTime(5000);
-		WebElement username = driver.findElement(By.xpath("//span[@class='name-value']"));
+		WebElement username = propElement(getPropfile(gpropname, "username"));
 		String username1 = username.getText();
-		writePropfile("username", "username", username1);
+		writePropfile("EducatorRegistration/username", "username", username1);
 		reportStep("User name is " + username1, "Pass");
 		
-		WebElement firstname = driver.findElement(By.xpath("(//input[contains(@class,'js-text-full text-full')])[1]"));
+		WebElement firstname = propElement(getPropfile(gpropname, "firstname"));
 		firstname.clear();
-		firstname.sendKeys("Tripti");
-		reportStep("Firstname is entered", "Pass");
+		firstname.sendKeys(getPropfile(lpropname, "FirstName"));
+		reportStep(getPropfile(lpropname, "FirstName") + " is entered as Firstname", "Pass");
 		
-		WebElement lastname = driver.findElement(By.xpath("(//input[contains(@class,'js-text-full text-full')])[2]"));
+		WebElement lastname = propElement(getPropfile(gpropname, "Lastname"));
 		lastname.clear();
-		lastname.sendKeys("Gupta");
-		reportStep("Lastname is entered", "Pass");
+		lastname.sendKeys(getPropfile(lpropname, "LastName"));
+		reportStep(getPropfile(lpropname, "LastName") + " is entered as Lastname", "Pass");
 		
-		WebElement email = driver.findElement(By.xpath("(//input[@type='email'])[1]"));
-		email.clear();
-		email.sendKeys("tripti.gupta1@gmail.com");
-		reportStep("Email is entered", "Pass");
+		WebElement emailele = propElement(getPropfile(gpropname, "Emailaddress"));
+		emailele.clear();
+		emailele.sendKeys(getPropfile(lpropname, "EmailID"));
+		reportStep(getPropfile(lpropname, "EmailID") + " is entered as Email", "Pass");
 		
-		WebElement verifyemail = driver.findElement(By.xpath("(//input[@type='email'])[2]"));
-		verifyemail.clear();
-		verifyemail.sendKeys("tripti.gupta1@gmail.com");
-		reportStep("Verify email is entered", "Pass");
+		WebElement verifyemailele = propElement(getPropfile(gpropname, "VerifyEmailaddress"));
+		verifyemailele.clear();
+		verifyemailele.sendKeys(getPropfile(lpropname, "VerifyEmailID"));
+		reportStep(getPropfile(lpropname, "VerifyEmailID") + " is entered as Verify email", "Pass");
 		
-		WebElement nextbutton = driver.findElement(By.xpath("//button[text()='Next']"));
-		scrollToTheGivenWebElement("XPATH&//button[text()='Next']");
+		scrollToTheGivenWebElement(getPropfile(gpropname, "nextbutton"));
 		reportStep("Next Button is clicked", "Pass");
-		nextbutton.click();
+		click(propElement(getPropfile(gpropname, "nextbutton")));
 		waitTime(3000);
 		
-		WebElement page2 = driver.findElement(By.xpath("//span[text()='Grade Level']"));
+		WebElement page2 = propElement(getPropfile(gpropname, "gradelevel"));
 		if(page2.isDisplayed()) {
 			reportStep("Page 2 is displayed", "Pass");
 			}else {

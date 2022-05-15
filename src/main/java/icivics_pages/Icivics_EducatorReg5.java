@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Properties;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -15,6 +14,12 @@ import cucumber.api.java.en.Then;
 import projectSpecific.base.ProjectSpecificMethods;
 
 public class Icivics_EducatorReg5 extends ProjectSpecificMethods {
+	public String gpropname = "EducatorRegistration/educatorregistration";
+	public String lpropname = "EducatorRegistration/educatorregistration1";
+	public String propname2 = "EducatorRegistration/educatorregistration2";
+	public String propname3 = "EducatorRegistration/educatorregistration3";
+	public String propname4 = "EducatorRegistration/educatorregistration4";
+	public String propname5 = "EducatorRegistration/educatorregistration5";
 
 	public Icivics_EducatorReg5(RemoteWebDriver driver, ExtentTest node, Properties prop) {
 		this.driver = driver;
@@ -31,19 +36,19 @@ public class Icivics_EducatorReg5 extends ProjectSpecificMethods {
 	
 public Icivics_EducatorReg5 verifywithvaliddata() throws InterruptedException, IOException {
 		
-		WebElement username = driver.findElement(By.xpath("//span[@class='name-value']"));
-		String username1 = username.getText();
-		writePropfile("username", "username", username1);
+	WebElement username = propElement(getPropfile(gpropname, "username"));
+	String username1 = username.getText();
+	writePropfile("EducatorRegistration/username", "username", username1);
+	
+	WebElement firstname = propElement(getPropfile(gpropname, "firstname"));
+	firstname.clear();
+	firstname.sendKeys(getPropfile(lpropname, "FirstName"));
 		
-		WebElement firstname = driver.findElement(By.xpath("(//input[contains(@class,'js-text-full text-full')])[1]"));
-		firstname.clear();
-		firstname.sendKeys("Tripti");
-		
-		WebElement lastname = driver.findElement(By.xpath("(//input[contains(@class,'js-text-full text-full')])[2]"));
+		WebElement lastname = propElement(getPropfile(gpropname, "Lastname"));
 		lastname.clear();
-		lastname.sendKeys("Gupta");
+		lastname.sendKeys(getPropfile(lpropname, "LastName"));
 		
-		String EmailId = "Tripti@gmail.com";
+		String EmailId = getPropfile(lpropname, "EmailID");
 		
 		long number = (long) Math.floor(Math.random() * 900000000L) + 10000000L;
 		String[] data = EmailId.split("@");
@@ -51,22 +56,23 @@ public Icivics_EducatorReg5 verifywithvaliddata() throws InterruptedException, I
 		String host = data[1];
 		String emailId = name + number + "@" + host;
 		
-		writePropfile("email", "email", emailId);
-		WebElement email = driver.findElement(By.xpath("(//input[@type='email'])[1]"));
+		reportStep(emailId + " email is used for creating account", "Pass");
+		writePropfile("EducatorRegistration/email", "email", emailId);
+		WebElement email = propElement(getPropfile(gpropname, "Emailaddress"));
 		email.clear();
 		email.sendKeys(emailId);
 		
-		WebElement verifyemail = driver.findElement(By.xpath("(//input[@type='email'])[2]"));
+		WebElement verifyemail = propElement(getPropfile(gpropname, "VerifyEmailaddress"));
 		verifyemail.clear();
 		verifyemail.sendKeys(emailId);
 		
-		WebElement nextbutton = driver.findElement(By.xpath("//button[text()='Next']"));
-		scrollToTheGivenWebElement("XPATH&//button[text()='Next']");
+		WebElement nextbutton = propElement(getPropfile(gpropname, "nextbutton"));
+		scrollToTheGivenWebElement(getPropfile(gpropname, "nextbutton"));
 		nextbutton.click();
 		waitTime(3000);
 		
-		String value = "Middle School";
-		List<WebElement> chkBox = driver.findElements(By.xpath("//div[@class='form-checkboxes']/div/label/input"));
+		String value = getPropfile(propname2, "Checkboxvalue");
+		List<WebElement> chkBox = propElement1(getPropfile(propname2, "checkboxlist1"));
 		int Size = chkBox.size();
 		for (int i = 0; i < Size-1; i++) {
 			String val = chkBox.get(i).getAttribute("value");
@@ -80,50 +86,48 @@ public Icivics_EducatorReg5 verifywithvaliddata() throws InterruptedException, I
 				
 		}
 		
-		String dropdownvalue = "Teacher";
-		WebElement roleDropDown = driver.findElement(By.xpath("//select[@id='edit-main-profiles-0-entity-field-user-type']"));
+		String dropdownvalue = getPropfile(propname2, "Dropdownvalue");
+		WebElement roleDropDown = propElement(getPropfile(propname2, "roledropdown"));
 		selectDropDownUsingValue(roleDropDown, dropdownvalue);
 		waitTime(3000);
 
-		driver.findElement(By.xpath("//button[.='Next']")).click();
+		click(propElement(getPropfile(propname2, "Nextbutton")));
 		waitTime(3000);
 		
-		String SchoolName = "st.Thomas's School";
+		String SchoolName = getPropfile(propname3, "Checkboxvalue");
 		
-		WebElement Schoolfield = driver.findElement(By.xpath("(//input[contains(@class,'js-text-full text-full')])[1]"));
+		WebElement Schoolfield = propElement(getPropfile(propname3, "Schoolfield"));
 		Schoolfield.sendKeys(SchoolName);
 		
-		String Zipcode5 = "12111";
+		WebElement Zipcodefield = propElement(getPropfile(propname3, "zipcodefieldtextbox"));
+		Zipcodefield.sendKeys(getPropfile(propname3, "Zipcode5"));
 		
-		WebElement Zipcodefield = driver.findElement(By.xpath("(//input[contains(@class,'js-text-full text-full')])[2]"));
-		Zipcodefield.sendKeys(Zipcode5);
+		String Teachstatevalue = getPropfile(propname3, "Teachstatevalue");
 		
-		String Teachstatevalue = "Idaho";
-		
-		WebElement teachingstate = driver.findElement(By.xpath("//select[@id='edit-main-profiles-0-entity-field-teaching-state']"));
+		WebElement teachingstate = propElement(getPropfile(propname3, "teachingstate"));
 		selectDropDownUsingText(teachingstate, Teachstatevalue);
 		waitTime(3000);
-
-		click(driver.findElement(By.xpath("//button[.='Next']")));
+		
+		click(propElement(getPropfile(propname3, "NextButton")));
 		waitTime(3000);
 		
-		String pwd = "TestIcivics@123";
-		WebElement password = driver.findElement(By.xpath("//input[@class='password-field js-password-field form-text required form-control']"));
+		String pwd = getPropfile(propname4, "Passwordvalue");
+		WebElement password = propElement(getPropfile(propname4, "password1"));
 		password.clear();
 		password.sendKeys(pwd);
 		
 		
-		WebElement confirmpassword = driver.findElement(By.xpath("//input[contains(@class,'password-confirm js-password-confirm')]"));
+		WebElement confirmpassword = propElement(getPropfile(propname4, "confirmpassword1"));
 		confirmpassword.clear();
 		confirmpassword.sendKeys(pwd);
 		
-		WebElement agreechkbox1 = driver.findElement(By.xpath("(//input[@type='checkbox'])[2]"));
+		WebElement agreechkbox1 = propElement(getPropfile(propname4, "agreechkbox"));
 		
 		if (!agreechkbox1.isSelected()) {
 			agreechkbox1.click();
 		}
 		
-		click(driver.findElement(By.xpath("//button[@title='Finish']")));
+		click(propElement(getPropfile(propname4, "finishbutton")));
 		waitTime(3000);
 		
 		return this;
@@ -131,15 +135,14 @@ public Icivics_EducatorReg5 verifywithvaliddata() throws InterruptedException, I
 	
 	@Then("verify Current page count 5 and print")
 	public Icivics_EducatorReg5 verifypagecount5() throws IOException {
-		String propname = "educatorregistration2";
 		String cssvalue = "background-color";
 		String Greencolor = "rgb(0, 178, 124)";
 
-		String Step1 = cssgetbefore(getPropfile(propname, "step1ele"), cssvalue, Greencolor);
-		String Step2 = cssgetbefore(getPropfile(propname, "step2ele"), cssvalue, Greencolor);
-		String Step3 = cssgetbefore(getPropfile(propname, "step3ele"), cssvalue, Greencolor);
-		String Step4 = cssgetbefore(getPropfile(propname, "step4ele"), cssvalue, Greencolor);
-		String Step5 = cssgetbefore(getPropfile(propname, "step5ele"), cssvalue, Greencolor);
+		String Step1 = cssgetbefore(getPropfile(propname5, "step1ele"), cssvalue, Greencolor);
+		String Step2 = cssgetbefore(getPropfile(propname5, "step2ele"), cssvalue, Greencolor);
+		String Step3 = cssgetbefore(getPropfile(propname5, "step3ele"), cssvalue, Greencolor);
+		String Step4 = cssgetbefore(getPropfile(propname5, "step4ele"), cssvalue, Greencolor);
+		String Step5 = cssgetbefore(getPropfile(propname5, "step5ele"), cssvalue, Greencolor);
 
 		if (Step1.equals(Greencolor) && Step2.equals(Greencolor) && Step3.equals(Greencolor) && Step4.equals(Greencolor)
 				&& Step5.equals(Greencolor)) {
@@ -153,7 +156,7 @@ public Icivics_EducatorReg5 verifywithvaliddata() throws InterruptedException, I
 
 	@Given("verify Message says check your inbox")
 	public Icivics_EducatorReg5 verifycheckmsgdisplay() throws IOException {
-		WebElement emailmsg = driver.findElement(By.xpath("//div[@class='verification-email-holder']//div[1]"));
+		WebElement emailmsg = propElement(getPropfile(propname5, "emailmsg"));
 		if(emailmsg.getText().equals("Check your inbox at:")&&emailmsg.isDisplayed()) {
 			reportStep(emailmsg.getText() + " label is verified", "Pass");}
 		else {
@@ -166,7 +169,7 @@ public Icivics_EducatorReg5 verifywithvaliddata() throws InterruptedException, I
 	@Then("Verify Message says confirmation email is on its way")
 	public Icivics_EducatorReg5 verifyemailheaderlabel()
 	{
-		WebElement emailheadermsg = driver.findElement(By.xpath("//div[@class='register-form-header-text']//h2[1]"));
+		WebElement emailheadermsg = propElement(getPropfile(propname5, "emailheadermsg"));
 		if (emailheadermsg.isDisplayed()&&emailheadermsg.getText().equals("Your confirmation email is on the way!")) {
 			reportStep(emailheadermsg.getText() + " email header msg is displayed and label text verified", "Pass");
 		}
@@ -179,8 +182,8 @@ public Icivics_EducatorReg5 verifywithvaliddata() throws InterruptedException, I
 	
 	@Given("Message has correct email from what was registered")
 	public Icivics_EducatorReg5 verifyregisteredemaildisplay() throws IOException {
-		String emailID = driver.findElement(By.xpath("(//div[@class='verification-email-holder']//div)[2]")).getText();
-		String email1 = getPropfile("email", "email");
+		String emailID = propElement(getPropfile(propname5, "emailID")).getText();
+		String email1 = getPropfile("EducatorRegistration/email", "email");
 		if (email1.equals(emailID)) {
 			reportStep("Registered email Id is verified", "Pass");
 		} else {
@@ -190,7 +193,7 @@ public Icivics_EducatorReg5 verifywithvaliddata() throws InterruptedException, I
 	@Given("Verify resend button is clickable")
 	public Icivics_EducatorReg5 verifyresendbutton()
 	{
-	if(clickOn("XPATH&//div[@class='verification-resend-button']//a[1]")) {
+	if(clickOn(getPropfile(propname5, "resendbutton"))) {
 		reportStep("resend button is clicked successfully", "Pass");
 	}else {
 		reportStep("resend button is not clicked", "Fail");
@@ -201,10 +204,10 @@ public Icivics_EducatorReg5 verifywithvaliddata() throws InterruptedException, I
 	
 	@Given("Verify Screen shows confirmation email has been sent")
 	public Icivics_EducatorReg5 verifyconfirmationemail() {
-	clickOn("XPATH&//div[@class='verification-resend-button']//a[1]");
+	clickOn(getPropfile(propname5, "resendbutton"));
 	waitTime(3000);
 	
-	WebElement confirmationemailheadermsg = driver.findElement(By.xpath("//div[@role='status']//p[1]"));
+	WebElement confirmationemailheadermsg = propElement(getPropfile(propname5, "confirmationemailheadermsg"));
 	if (confirmationemailheadermsg.isDisplayed()&&confirmationemailheadermsg.getText().equals("Confirmation email has been resent.")) {
 		reportStep(confirmationemailheadermsg.getText() + " conformation email msg is displayed and text verified", "Pass");
 	}

@@ -1,6 +1,7 @@
 package selenium.design;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.openqa.selenium.InvalidElementStateException;
 import org.openqa.selenium.NoSuchElementException;
@@ -205,6 +206,9 @@ public interface Element {
 
 
 	public String writePropfile(String propname, String key, String value) throws IOException;
+
+
+	public List<WebElement> propElement1(String locatorType);
 	
 }
 

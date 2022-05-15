@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-	<test thread-count="5" name="Test">
+	<test thread-count="2" parallel = "classes" name="Test">
 		<classes>
 			<class name="icivics_testcases.Icivics_EducatorRegistration_Test" />
 			<class name="icivics_testcases.Icivics_EducatorRegistration1_Test" />
 			<class name="icivics_testcases.Icivics_EducatorRegistration2_Test" />
 			<class name="icivics_testcases.Icivics_EducatorRegistration3_Test" />
+			<class name="icivics_testcases.Icivics_EducatorRegistration4_Test" />
+			<class name="icivics_testcases.Icivics_EducatorRegistration5_Test" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

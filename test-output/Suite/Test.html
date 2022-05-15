@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>35/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>54/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed May 11 19:27:35 IST 2022</td>
+<td>Started on:</td><td>Fri May 13 19:13:54 IST 2022</td>
 </tr>
-<tr><td>Total time:</td><td>881 seconds (881373 ms)</td>
+<tr><td>Total time:</td><td>1179 seconds (1179988 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,85 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration3_Test.C352_verifyallfieldsallowtoentertextandmakeselection()'><b>C352_verifyallfieldsallowtoentertextandmakeselection</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration3_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//input[contains(@class,&apos;js-text-full text-full&apos;)])[2]&quot;}
+  (Session info: chrome=101.0.4951.54)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;AMX-RL-20-608-W&apos;, ip: &apos;10.10.7.187&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 101.0.4951.54, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\VENKAT~1.T\AppData...}, goog:chromeOptions: {debuggerAddress: localhost:50756}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: c4e390d10501bc5a0c2d1db51bd39d77
+*** Element info: {Using=xpath, value=(//input[contains(@class,&apos;js-text-full text-full&apos;)])[2]}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at icivics_pages.Icivics_EducatorReg3.Verifyzipcodeerrormsg(Icivics_EducatorReg3.java:279)
+	at icivics_testcases.Icivics_EducatorRegistration3_Test.C352_verifyallfieldsallowtoentertextandmakeselection(Icivics_EducatorRegistration3_Test.java:62)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1464690384", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1464690384'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//input[contains(@class,&apos;js-text-full text-full&apos;)])[2]&quot;}
+  (Session info: chrome=101.0.4951.54)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;AMX-RL-20-608-W&apos;, ip: &apos;10.10.7.187&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 101.0.4951.54, chrome: {chromedriverVersion: 101.0.4951.41 (93c720db8323..., userDataDir: C:\Users\VENKAT~1.T\AppData...}, goog:chromeOptions: {debuggerAddress: localhost:50756}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: c4e390d10501bc5a0c2d1db51bd39d77
+*** Element info: {Using=xpath, value=(//input[contains(@class,&apos;js-text-full text-full&apos;)])[2]}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at icivics_pages.Icivics_EducatorReg3.Verifyzipcodeerrormsg(Icivics_EducatorReg3.java:279)
+	at icivics_testcases.Icivics_EducatorRegistration3_Test.C352_verifyallfieldsallowtoentertextandmakeselection(Icivics_EducatorRegistration3_Test.java:62)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+</pre></div></td>
+<td>119</td>
+<td>icivics_testcases.Icivics_EducatorRegistration3_Test@909217e</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -75,180 +154,275 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='icivics_testcases.Icivics_EducatorRegistration2_Test.C346_verifyerrormsgboxcolor()'><b>C346_verifyerrormsgboxcolor</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration2_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td title='icivics_testcases.Icivics_EducatorRegistration4_Test.C363_verifyallpage4fields()'><b>C363_verifyallpage4fields</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration4_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
 <td></td>
-<td>10</td>
-<td>icivics_testcases.Icivics_EducatorRegistration2_Test@75437611</td></tr>
-<tr>
-<td title='icivics_testcases.Icivics_EducatorRegistration2_Test.C343_verifyotheradditionalfield()'><b>C343_verifyotheradditionalfield</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration2_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
-<td></td>
-<td>11</td>
-<td>icivics_testcases.Icivics_EducatorRegistration2_Test@75437611</td></tr>
+<td>36</td>
+<td>icivics_testcases.Icivics_EducatorRegistration4_Test@18271936</td></tr>
 <tr>
 <td title='icivics_testcases.Icivics_EducatorRegistration_Test.C323_Verifyallbuttonlinks()'><b>C323_Verifyallbuttonlinks</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
 <td></td>
-<td>183</td>
-<td>icivics_testcases.Icivics_EducatorRegistration_Test@5149d738</td></tr>
-<tr>
-<td title='icivics_testcases.Icivics_EducatorRegistration2_Test.C338_verifybreadcrumbspage1()'><b>C338_verifybreadcrumbspage1</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration2_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
-<td></td>
-<td>6</td>
-<td>icivics_testcases.Icivics_EducatorRegistration2_Test@75437611</td></tr>
-<tr>
-<td title='icivics_testcases.Icivics_EducatorRegistration2_Test.C341_verifyRoleandGradeLevel()'><b>C341_verifyRoleandGradeLevel</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration2_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
-<td></td>
-<td>16</td>
-<td>icivics_testcases.Icivics_EducatorRegistration2_Test@75437611</td></tr>
-<tr>
-<td title='icivics_testcases.Icivics_EducatorRegistration1_Test.C327_verifybreadcrumbspage1()'><b>C327_verifybreadcrumbspage1</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration1_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
-<td></td>
-<td>2</td>
-<td>icivics_testcases.Icivics_EducatorRegistration1_Test@742ff096</td></tr>
-<tr>
-<td title='icivics_testcases.Icivics_EducatorRegistration1_Test.C330_verifyusernamepregeneratedrandomly()'><b>C330_verifyusernamepregeneratedrandomly</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration1_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
-<td></td>
-<td>14</td>
-<td>icivics_testcases.Icivics_EducatorRegistration1_Test@742ff096</td></tr>
-<tr>
-<td title='icivics_testcases.Icivics_EducatorRegistration3_Test.C352_verifyallfieldsallowtoentertextandmakeselection()'><b>C352_verifyallfieldsallowtoentertextandmakeselection</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration3_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
-<td></td>
-<td>37</td>
-<td>icivics_testcases.Icivics_EducatorRegistration3_Test@350aac89</td></tr>
-<tr>
-<td title='icivics_testcases.Icivics_EducatorRegistration_Test.C326_Verifybreadcrumbs()'><b>C326_Verifybreadcrumbs</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
-<td></td>
-<td>5</td>
-<td>icivics_testcases.Icivics_EducatorRegistration_Test@5149d738</td></tr>
-<tr>
-<td title='icivics_testcases.Icivics_EducatorRegistration1_Test.C333_verifyemailtooltips()'><b>C333_verifyemailtooltips</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration1_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
-<td></td>
-<td>3</td>
-<td>icivics_testcases.Icivics_EducatorRegistration1_Test@742ff096</td></tr>
-<tr>
-<td title='icivics_testcases.Icivics_EducatorRegistration3_Test.C349_verifypreviouspage()'><b>C349_verifypreviouspage</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration3_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
-<td></td>
-<td>16</td>
-<td>icivics_testcases.Icivics_EducatorRegistration3_Test@350aac89</td></tr>
-<tr>
-<td title='icivics_testcases.Icivics_EducatorRegistration_Test.C321_VerifyallpageElements()'><b>C321_VerifyallpageElements</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
-<td></td>
-<td>18</td>
-<td>icivics_testcases.Icivics_EducatorRegistration_Test@5149d738</td></tr>
-<tr>
-<td title='icivics_testcases.Icivics_EducatorRegistration2_Test.C344_verifyasterisk()'><b>C344_verifyasterisk</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration2_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
-<td></td>
-<td>8</td>
-<td>icivics_testcases.Icivics_EducatorRegistration2_Test@75437611</td></tr>
-<tr>
-<td title='icivics_testcases.Icivics_EducatorRegistration1_Test.C329_verifyusernamepregenerated()'><b>C329_verifyusernamepregenerated</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration1_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
-<td></td>
-<td>8</td>
-<td>icivics_testcases.Icivics_EducatorRegistration1_Test@742ff096</td></tr>
-<tr>
-<td title='icivics_testcases.Icivics_EducatorRegistration_Test.C325_Verifyerrormsg()'><b>C325_Verifyerrormsg</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
-<td></td>
-<td>5</td>
-<td>icivics_testcases.Icivics_EducatorRegistration_Test@5149d738</td></tr>
-<tr>
-<td title='icivics_testcases.Icivics_EducatorRegistration1_Test.C337_verifyvalidregistration()'><b>C337_verifyvalidregistration</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration1_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
-<td></td>
-<td>12</td>
-<td>icivics_testcases.Icivics_EducatorRegistration1_Test@742ff096</td></tr>
+<td>524</td>
+<td>icivics_testcases.Icivics_EducatorRegistration_Test@4b29d1d2</td></tr>
 <tr>
 <td title='icivics_testcases.Icivics_EducatorRegistration3_Test.C355_verifyallfieldswithblankfield()'><b>C355_verifyallfieldswithblankfield</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration3_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
 <td></td>
-<td>17</td>
-<td>icivics_testcases.Icivics_EducatorRegistration3_Test@350aac89</td></tr>
-<tr>
-<td title='icivics_testcases.Icivics_EducatorRegistration1_Test.C332_verifyfieldsmarkedwithanasterisk()'><b>C332_verifyfieldsmarkedwithanasterisk</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration1_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
-<td></td>
-<td>3</td>
-<td>icivics_testcases.Icivics_EducatorRegistration1_Test@742ff096</td></tr>
-<tr>
-<td title='icivics_testcases.Icivics_EducatorRegistration_Test.C322_ButtonHover()'><b>C322_ButtonHover</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
-<td></td>
-<td>27</td>
-<td>icivics_testcases.Icivics_EducatorRegistration_Test@5149d738</td></tr>
-<tr>
-<td title='icivics_testcases.Icivics_EducatorRegistration3_Test.C351_verifyallpage3fields()'><b>C351_verifyallpage3fields</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration3_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
-<td></td>
-<td>29</td>
-<td>icivics_testcases.Icivics_EducatorRegistration3_Test@350aac89</td></tr>
-<tr>
-<td title='icivics_testcases.Icivics_EducatorRegistration1_Test.C331_verifyentertextinallfields()'><b>C331_verifyentertextinallfields</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration1_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
-<td></td>
-<td>4</td>
-<td>icivics_testcases.Icivics_EducatorRegistration1_Test@742ff096</td></tr>
-<tr>
-<td title='icivics_testcases.Icivics_EducatorRegistration3_Test.C354_verifyallfieldswithinvaliddata()'><b>C354_verifyallfieldswithinvaliddata</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration3_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
-<td></td>
-<td>19</td>
-<td>icivics_testcases.Icivics_EducatorRegistration3_Test@350aac89</td></tr>
+<td>18</td>
+<td>icivics_testcases.Icivics_EducatorRegistration3_Test@909217e</td></tr>
 <tr>
 <td title='icivics_testcases.Icivics_EducatorRegistration3_Test.C357_verifyvalidsubmission()'><b>C357_verifyvalidsubmission</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration3_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
 <td></td>
-<td>21</td>
-<td>icivics_testcases.Icivics_EducatorRegistration3_Test@350aac89</td></tr>
+<td>23</td>
+<td>icivics_testcases.Icivics_EducatorRegistration3_Test@909217e</td></tr>
 <tr>
-<td title='icivics_testcases.Icivics_EducatorRegistration_Test.C324_WindowResize()'><b>C324_WindowResize</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td title='icivics_testcases.Icivics_EducatorRegistration4_Test.C371_verifyvalidsubmission()'><b>C371_verifyvalidsubmission</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration4_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
 <td></td>
-<td>13</td>
-<td>icivics_testcases.Icivics_EducatorRegistration_Test@5149d738</td></tr>
+<td>29</td>
+<td>icivics_testcases.Icivics_EducatorRegistration4_Test@18271936</td></tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration4_Test.C366_verifypasswordstrengthIndicator()'><b>C366_verifypasswordstrengthIndicator</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration4_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td></td>
+<td>25</td>
+<td>icivics_testcases.Icivics_EducatorRegistration4_Test@18271936</td></tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration4_Test.C362_verifySignUpischecked()'><b>C362_verifySignUpischecked</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration4_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td></td>
+<td>27</td>
+<td>icivics_testcases.Icivics_EducatorRegistration4_Test@18271936</td></tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration4_Test.C367_verifypasswordIndicatormatch()'><b>C367_verifypasswordIndicatormatch</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration4_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td></td>
+<td>25</td>
+<td>icivics_testcases.Icivics_EducatorRegistration4_Test@18271936</td></tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration4_Test.C365_verifypasswordtooltips()'><b>C365_verifypasswordtooltips</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration4_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td></td>
+<td>35</td>
+<td>icivics_testcases.Icivics_EducatorRegistration4_Test@18271936</td></tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration4_Test.C359_verifypreviouspage()'><b>C359_verifypreviouspage</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration4_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td></td>
+<td>30</td>
+<td>icivics_testcases.Icivics_EducatorRegistration4_Test@18271936</td></tr>
 <tr>
 <td title='icivics_testcases.Icivics_EducatorRegistration1_Test.C334_verifyemailerrormsg()'><b>C334_verifyemailerrormsg</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration1_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
 <td></td>
-<td>10</td>
-<td>icivics_testcases.Icivics_EducatorRegistration1_Test@742ff096</td></tr>
+<td>24</td>
+<td>icivics_testcases.Icivics_EducatorRegistration1_Test@5afa3c9</td></tr>
 <tr>
-<td title='icivics_testcases.Icivics_EducatorRegistration3_Test.C350_verifyalldataremembered()'><b>C350_verifyalldataremembered</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration3_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td title='icivics_testcases.Icivics_EducatorRegistration4_Test.C361_verifyallpage3fields()'><b>C361_verifyallpage3fields</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration4_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td></td>
+<td>32</td>
+<td>icivics_testcases.Icivics_EducatorRegistration4_Test@18271936</td></tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration5_Test.C375_verifyconfirmationemail()'><b>C375_verifyconfirmationemail</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration5_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td></td>
+<td>27</td>
+<td>icivics_testcases.Icivics_EducatorRegistration5_Test@606e4010</td></tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration_Test.C324_WindowResize()'><b>C324_WindowResize</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
 <td></td>
 <td>15</td>
-<td>icivics_testcases.Icivics_EducatorRegistration3_Test@350aac89</td></tr>
+<td>icivics_testcases.Icivics_EducatorRegistration_Test@4b29d1d2</td></tr>
 <tr>
-<td title='icivics_testcases.Icivics_EducatorRegistration1_Test.C335_verifyblankerrormsg()'><b>C335_verifyblankerrormsg</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration1_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td title='icivics_testcases.Icivics_EducatorRegistration1_Test.C329_verifyusernamepregenerated()'><b>C329_verifyusernamepregenerated</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration1_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
 <td></td>
-<td>31</td>
-<td>icivics_testcases.Icivics_EducatorRegistration1_Test@742ff096</td></tr>
+<td>19</td>
+<td>icivics_testcases.Icivics_EducatorRegistration1_Test@5afa3c9</td></tr>
 <tr>
-<td title='icivics_testcases.Icivics_EducatorRegistration2_Test.C339_verifypreviouspage()'><b>C339_verifypreviouspage</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration2_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td title='icivics_testcases.Icivics_EducatorRegistration5_Test.C373_verifywelcomemessage()'><b>C373_verifywelcomemessage</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration5_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
 <td></td>
-<td>12</td>
-<td>icivics_testcases.Icivics_EducatorRegistration2_Test@75437611</td></tr>
+<td>35</td>
+<td>icivics_testcases.Icivics_EducatorRegistration5_Test@606e4010</td></tr>
 <tr>
-<td title='icivics_testcases.Icivics_EducatorRegistration2_Test.C342_verifymakeselection()'><b>C342_verifymakeselection</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration2_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td title='icivics_testcases.Icivics_EducatorRegistration4_Test.C368_verifyallfieldswithinvaliddata()'><b>C368_verifyallfieldswithinvaliddata</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration4_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
 <td></td>
-<td>17</td>
-<td>icivics_testcases.Icivics_EducatorRegistration2_Test@75437611</td></tr>
+<td>29</td>
+<td>icivics_testcases.Icivics_EducatorRegistration4_Test@18271936</td></tr>
 <tr>
-<td title='icivics_testcases.Icivics_EducatorRegistration2_Test.C340_verifyalldataremembered()'><b>C340_verifyalldataremembered</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration2_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td title='icivics_testcases.Icivics_EducatorRegistration4_Test.C360_verifyalldataremembered()'><b>C360_verifyalldataremembered</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration4_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td></td>
+<td>97</td>
+<td>icivics_testcases.Icivics_EducatorRegistration4_Test@18271936</td></tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration_Test.C325_Verifyerrormsg()'><b>C325_Verifyerrormsg</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
 <td></td>
 <td>11</td>
-<td>icivics_testcases.Icivics_EducatorRegistration2_Test@75437611</td></tr>
-<tr>
-<td title='icivics_testcases.Icivics_EducatorRegistration2_Test.C345_verifyblankerrormsg()'><b>C345_verifyblankerrormsg</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration2_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
-<td></td>
-<td>43</td>
-<td>icivics_testcases.Icivics_EducatorRegistration2_Test@75437611</td></tr>
-<tr>
-<td title='icivics_testcases.Icivics_EducatorRegistration3_Test.C348_verifybreadcrumbspage3()'><b>C348_verifybreadcrumbspage3</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration3_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
-<td></td>
-<td>15</td>
-<td>icivics_testcases.Icivics_EducatorRegistration3_Test@350aac89</td></tr>
+<td>icivics_testcases.Icivics_EducatorRegistration_Test@4b29d1d2</td></tr>
 <tr>
 <td title='icivics_testcases.Icivics_EducatorRegistration1_Test.C336_verifyinvaliderrormsg()'><b>C336_verifyinvaliderrormsg</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration1_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
 <td></td>
-<td>9</td>
-<td>icivics_testcases.Icivics_EducatorRegistration1_Test@742ff096</td></tr>
+<td>25</td>
+<td>icivics_testcases.Icivics_EducatorRegistration1_Test@5afa3c9</td></tr>
 <tr>
-<td title='icivics_testcases.Icivics_EducatorRegistration2_Test.C347_verifyvalidsubmission()'><b>C347_verifyvalidsubmission</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration2_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td title='icivics_testcases.Icivics_EducatorRegistration1_Test.C337_verifyvalidregistration()'><b>C337_verifyvalidregistration</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration1_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
 <td></td>
-<td>21</td>
-<td>icivics_testcases.Icivics_EducatorRegistration2_Test@75437611</td></tr>
+<td>19</td>
+<td>icivics_testcases.Icivics_EducatorRegistration1_Test@5afa3c9</td></tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration2_Test.C342_verifymakeselection()'><b>C342_verifymakeselection</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration2_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td></td>
+<td>27</td>
+<td>icivics_testcases.Icivics_EducatorRegistration2_Test@72035809</td></tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration3_Test.C354_verifyallfieldswithinvaliddata()'><b>C354_verifyallfieldswithinvaliddata</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration3_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td></td>
+<td>20</td>
+<td>icivics_testcases.Icivics_EducatorRegistration3_Test@909217e</td></tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration1_Test.C335_verifyblankerrormsg()'><b>C335_verifyblankerrormsg</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration1_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td></td>
+<td>111</td>
+<td>icivics_testcases.Icivics_EducatorRegistration1_Test@5afa3c9</td></tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration5_Test.C377_verifynotification()'><b>C377_verifynotification</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration5_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td></td>
+<td>29</td>
+<td>icivics_testcases.Icivics_EducatorRegistration5_Test@606e4010</td></tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration2_Test.C338_verifybreadcrumbspage1()'><b>C338_verifybreadcrumbspage1</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration2_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td></td>
+<td>14</td>
+<td>icivics_testcases.Icivics_EducatorRegistration2_Test@72035809</td></tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration3_Test.C348_verifybreadcrumbspage3()'><b>C348_verifybreadcrumbspage3</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration3_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td></td>
+<td>17</td>
+<td>icivics_testcases.Icivics_EducatorRegistration3_Test@909217e</td></tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration5_Test.C374_verifyconfirmationemail()'><b>C374_verifyconfirmationemail</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration5_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td></td>
+<td>28</td>
+<td>icivics_testcases.Icivics_EducatorRegistration5_Test@606e4010</td></tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration5_Test.C376_verifyresendbutton()'><b>C376_verifyresendbutton</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration5_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td></td>
+<td>34</td>
+<td>icivics_testcases.Icivics_EducatorRegistration5_Test@606e4010</td></tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration3_Test.C351_verifyallpage3fields()'><b>C351_verifyallpage3fields</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration3_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td></td>
+<td>35</td>
+<td>icivics_testcases.Icivics_EducatorRegistration3_Test@909217e</td></tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration5_Test.C372_verifybreadcrumbspage5()'><b>C372_verifybreadcrumbspage5</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration5_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td></td>
+<td>34</td>
+<td>icivics_testcases.Icivics_EducatorRegistration5_Test@606e4010</td></tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration2_Test.C341_verifyRoleandGradeLevel()'><b>C341_verifyRoleandGradeLevel</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration2_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td></td>
+<td>32</td>
+<td>icivics_testcases.Icivics_EducatorRegistration2_Test@72035809</td></tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration4_Test.C358_verifybreadcrumbspage4()'><b>C358_verifybreadcrumbspage4</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration4_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td></td>
+<td>33</td>
+<td>icivics_testcases.Icivics_EducatorRegistration4_Test@18271936</td></tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration1_Test.C332_verifyfieldsmarkedwithanasterisk()'><b>C332_verifyfieldsmarkedwithanasterisk</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration1_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td></td>
+<td>11</td>
+<td>icivics_testcases.Icivics_EducatorRegistration1_Test@5afa3c9</td></tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration2_Test.C340_verifyalldataremembered()'><b>C340_verifyalldataremembered</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration2_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td></td>
+<td>22</td>
+<td>icivics_testcases.Icivics_EducatorRegistration2_Test@72035809</td></tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration3_Test.C350_verifyalldataremembered()'><b>C350_verifyalldataremembered</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration3_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td></td>
+<td>30</td>
+<td>icivics_testcases.Icivics_EducatorRegistration3_Test@909217e</td></tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration_Test.C321_VerifyallpageElements()'><b>C321_VerifyallpageElements</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td></td>
+<td>25</td>
+<td>icivics_testcases.Icivics_EducatorRegistration_Test@4b29d1d2</td></tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration2_Test.C345_verifyblankerrormsg()'><b>C345_verifyblankerrormsg</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration2_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td></td>
+<td>48</td>
+<td>icivics_testcases.Icivics_EducatorRegistration2_Test@72035809</td></tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration1_Test.C327_verifybreadcrumbspage1()'><b>C327_verifybreadcrumbspage1</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration1_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td></td>
+<td>9</td>
+<td>icivics_testcases.Icivics_EducatorRegistration1_Test@5afa3c9</td></tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration2_Test.C343_verifyotheradditionalfield()'><b>C343_verifyotheradditionalfield</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration2_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td></td>
+<td>32</td>
+<td>icivics_testcases.Icivics_EducatorRegistration2_Test@72035809</td></tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration2_Test.C346_verifyerrormsgboxcolor()'><b>C346_verifyerrormsgboxcolor</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration2_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td></td>
+<td>19</td>
+<td>icivics_testcases.Icivics_EducatorRegistration2_Test@72035809</td></tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration_Test.C326_Verifybreadcrumbs()'><b>C326_Verifybreadcrumbs</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td></td>
+<td>7</td>
+<td>icivics_testcases.Icivics_EducatorRegistration_Test@4b29d1d2</td></tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration4_Test.C364_verifyallfieldasterisk()'><b>C364_verifyallfieldasterisk</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration4_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td></td>
+<td>31</td>
+<td>icivics_testcases.Icivics_EducatorRegistration4_Test@18271936</td></tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration4_Test.C369_verifyallfieldswithblankdata()'><b>C369_verifyallfieldswithblankdata</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration4_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td></td>
+<td>24</td>
+<td>icivics_testcases.Icivics_EducatorRegistration4_Test@18271936</td></tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration3_Test.C349_verifypreviouspage()'><b>C349_verifypreviouspage</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration3_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td></td>
+<td>20</td>
+<td>icivics_testcases.Icivics_EducatorRegistration3_Test@909217e</td></tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration1_Test.C330_verifyusernamepregeneratedrandomly()'><b>C330_verifyusernamepregeneratedrandomly</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration1_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td></td>
+<td>26</td>
+<td>icivics_testcases.Icivics_EducatorRegistration1_Test@5afa3c9</td></tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration_Test.C322_ButtonHover()'><b>C322_ButtonHover</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td></td>
+<td>44</td>
+<td>icivics_testcases.Icivics_EducatorRegistration_Test@4b29d1d2</td></tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration2_Test.C344_verifyasterisk()'><b>C344_verifyasterisk</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration2_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td></td>
+<td>11</td>
+<td>icivics_testcases.Icivics_EducatorRegistration2_Test@72035809</td></tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration2_Test.C339_verifypreviouspage()'><b>C339_verifypreviouspage</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration2_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td></td>
+<td>26</td>
+<td>icivics_testcases.Icivics_EducatorRegistration2_Test@72035809</td></tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration4_Test.C370_verifyallfieldswithblankandinvaliddata()'><b>C370_verifyallfieldswithblankandinvaliddata</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration4_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td></td>
+<td>30</td>
+<td>icivics_testcases.Icivics_EducatorRegistration4_Test@18271936</td></tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration1_Test.C331_verifyentertextinallfields()'><b>C331_verifyentertextinallfields</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration1_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td></td>
+<td>7</td>
+<td>icivics_testcases.Icivics_EducatorRegistration1_Test@5afa3c9</td></tr>
 <tr>
 <td title='icivics_testcases.Icivics_EducatorRegistration1_Test.C328_verifytextfields()'><b>C328_verifytextfields</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration1_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
 <td></td>
-<td>4</td>
-<td>icivics_testcases.Icivics_EducatorRegistration1_Test@742ff096</td></tr>
+<td>12</td>
+<td>icivics_testcases.Icivics_EducatorRegistration1_Test@5afa3c9</td></tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration1_Test.C333_verifyemailtooltips()'><b>C333_verifyemailtooltips</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration1_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td></td>
+<td>10</td>
+<td>icivics_testcases.Icivics_EducatorRegistration1_Test@5afa3c9</td></tr>
+<tr>
+<td title='icivics_testcases.Icivics_EducatorRegistration2_Test.C347_verifyvalidsubmission()'><b>C347_verifyvalidsubmission</b><br>Test class: icivics_testcases.Icivics_EducatorRegistration2_Test<br>Parameters: https://staging.d9.icivics.org/user/register?role=teacher</td>
+<td></td>
+<td>25</td>
+<td>icivics_testcases.Icivics_EducatorRegistration2_Test@72035809</td></tr>
 </table><p>
 </body>
 </html>

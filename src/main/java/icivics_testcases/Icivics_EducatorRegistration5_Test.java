@@ -27,7 +27,7 @@ public class Icivics_EducatorRegistration5_Test extends ProjectSpecificMethods {
 	}
 
 	// C373 - Do you see a notification that a welcome message has been sent to your email address?
-	@Test(dataProvider = "fetchData", priority = 0)
+	@Test(dataProvider = "fetchData", priority = 1)
 	public void C373_verifywelcomemessage(String URL) throws IOException, InterruptedException {
 		node = test.createNode(
 				"C373 - Do you see a notification that a welcome message has been sent to your email address?");
@@ -36,7 +36,7 @@ public class Icivics_EducatorRegistration5_Test extends ProjectSpecificMethods {
 	}
 
 	// C374 - Do you see text that your confirmation email is on the way?
-	@Test(dataProvider = "fetchData", priority = 0)
+	@Test(dataProvider = "fetchData", priority = 2)
 	public void C374_verifyconfirmationemail(String URL) throws IOException, InterruptedException {
 		node = test.createNode("C374 - Do you see text that your confirmation email is on the way?");
 		extent.attachReporter(reporter);
@@ -44,7 +44,7 @@ public class Icivics_EducatorRegistration5_Test extends ProjectSpecificMethods {
 	}
 
 	// C375 - Is your email displayed on the page?
-	@Test(dataProvider = "fetchData", priority = 0)
+	@Test(dataProvider = "fetchData", priority = 3)
 	public void C375_verifyconfirmationemail(String URL) throws IOException, InterruptedException {
 		node = test.createNode("C375 - Is your email displayed on the page?");
 		extent.attachReporter(reporter);
@@ -53,7 +53,7 @@ public class Icivics_EducatorRegistration5_Test extends ProjectSpecificMethods {
 	}
 
 	// C376 - Can you select a button to resend your confirmation email?
-	@Test(dataProvider = "fetchData", priority = 0)
+	@Test(dataProvider = "fetchData", priority = 4)
 	public void C376_verifyresendbutton(String URL) throws IOException, InterruptedException {
 		node = test.createNode("C376 - Can you select a button to resend your confirmation email?");
 		extent.attachReporter(reporter);
@@ -61,7 +61,7 @@ public class Icivics_EducatorRegistration5_Test extends ProjectSpecificMethods {
 	}
 
 	// C377 - Do you see a notification when the email has been resent?
-	@Test(dataProvider = "fetchData", priority = 0)
+	@Test(dataProvider = "fetchData", priority = 5)
 	public void C377_verifynotification(String URL) throws IOException, InterruptedException {
 		node = test.createNode("C377 - Do you see a notification when the email has been resent?");
 		extent.attachReporter(reporter);

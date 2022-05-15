@@ -3,11 +3,9 @@ package icivics_pages;
 import java.io.IOException;
 import java.util.Properties;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
-//import org.testng.Assert;
 
 import com.aventstack.extentreports.ExtentTest;
 
@@ -18,6 +16,7 @@ import cucumber.api.java.en.When;
 import projectSpecific.base.ProjectSpecificMethods;
 
 public class Icivics_EducatorReg extends ProjectSpecificMethods {
+	public String gpropname = "EducatorRegistration/educatorregistration";
 
 	public Icivics_EducatorReg(RemoteWebDriver driver, ExtentTest node, Properties prop) {
 		this.driver = driver;
@@ -39,7 +38,7 @@ public class Icivics_EducatorReg extends ProjectSpecificMethods {
 
 	@And("Pagecounter is verified successfully")
 	public Icivics_EducatorReg pagecounter() throws IOException {
-		WebElement Pagecounter = driver.findElement(By.xpath("//div[@class='register-form-steps-wrapper']/ul"));
+		WebElement Pagecounter = propElement(getPropfile(gpropname, "pagecounter"));
 		if (Pagecounter.isDisplayed()) {
 			reportStep("Page counter 1-5 is Displayed", "Pass");
 		} else
@@ -48,18 +47,18 @@ public class Icivics_EducatorReg extends ProjectSpecificMethods {
 	}
 
 	@And("Username verified successfully")
-	public Icivics_EducatorReg username() throws InterruptedException {
-		WebElement usernamelabel = driver.findElement(By.xpath("//span[text()='Username:']"));
+	public Icivics_EducatorReg username() throws InterruptedException, IOException {
+		WebElement usernamelabel = propElement(getPropfile(gpropname, "usernamelabel"));
 		if (usernamelabel.isDisplayed()) {
 			reportStep("Username label is displayed", "Pass");
 		} else {
 			reportStep("Username label box is not displayed", "Fail");
 		}
-		WebElement username = driver.findElement(By.xpath("//span[@class='name-value']"));
+		WebElement username = propElement(getPropfile(gpropname, "username"));
 		waitTime(6000);
 		String username1 = username.getText();
 		System.out.println(username1);
-		driver.findElement(By.xpath("//span[@class='icon reload']//i[1]")).click();
+		propElement(getPropfile(gpropname, "reloadicon")).click();
 		waitTime(6000);
 		String username2 = username.getText();
 		System.out.println(username2);
@@ -74,8 +73,8 @@ public class Icivics_EducatorReg extends ProjectSpecificMethods {
 	}
 
 	@And("Reload button verified")
-	public Icivics_EducatorReg reloadbutton() {
-		WebElement randombutton = driver.findElement(By.xpath("//span[@class='icon reload']//i[1]"));
+	public Icivics_EducatorReg reloadbutton() throws IOException {
+		WebElement randombutton = propElement(getPropfile(gpropname, "reloadicon"));
 		if (randombutton.isDisplayed()) {
 			reportStep("Randomize button is Verified successfully", "Pass");
 		}
@@ -83,16 +82,15 @@ public class Icivics_EducatorReg extends ProjectSpecificMethods {
 	}
 
 	@And("Firstname is verified successfully")
-	public Icivics_EducatorReg firstname() {
-		WebElement firstnamelabel = driver.findElement(By.xpath("//label[text()='First Name']"));
+	public Icivics_EducatorReg firstname() throws IOException {
+		WebElement firstnamelabel = propElement(getPropfile(gpropname, "firstnamelabel"));
 		if (firstnamelabel.isDisplayed()) {
 			reportStep("First name label is displayed", "Pass");
 		} else {
 			reportStep("First name label box is not displayed", "Fail");
 		}
 
-		WebElement firstname = driver
-				.findElement(By.xpath("//*[@id='edit-main-profiles-0-entity-field-first-name-0-value']"));
+		WebElement firstname = propElement(getPropfile(gpropname, "firstname"));
 		String CLbox = firstname.getAttribute("value");
 		if (CLbox.isEmpty()) {
 			reportStep("First name text box is Blank", "Pass");
@@ -103,16 +101,15 @@ public class Icivics_EducatorReg extends ProjectSpecificMethods {
 	}
 
 	@And("Lastname is verified successfully")
-	public Icivics_EducatorReg lastname() {
-		WebElement Lastnamelabel = driver.findElement(By.xpath("//label[text()='Last Name']"));
+	public Icivics_EducatorReg lastname() throws IOException {
+		WebElement Lastnamelabel = propElement(getPropfile(gpropname, "Lastnamelabel"));
 		if (Lastnamelabel.isDisplayed()) {
 			reportStep("Lastname label is displayed", "Pass");
 		} else {
 			reportStep("Lastname label box is not displayed", "Fail");
 		}
 
-		WebElement Lastname = driver
-				.findElement(By.xpath("//*[@id='edit-main-profiles-0-entity-field-last-name-0-value']"));
+		WebElement Lastname = propElement(getPropfile(gpropname, "Lastname"));
 		String CLbox = Lastname.getAttribute("value");
 		if (CLbox.isEmpty()) {
 			reportStep("Last name text box is Blank", "Pass");
@@ -123,15 +120,15 @@ public class Icivics_EducatorReg extends ProjectSpecificMethods {
 	}
 
 	@And("Email is verified successfully")
-	public Icivics_EducatorReg Email() {
-		WebElement Emailaddresslabel = driver.findElement(By.xpath("//label[text()='Email address']"));
+	public Icivics_EducatorReg Email() throws IOException {
+		WebElement Emailaddresslabel = propElement(getPropfile(gpropname, "Emailaddresslabel"));
 		if (Emailaddresslabel.isDisplayed()) {
 			reportStep("Emailaddress label is displayed", "Pass");
 		} else {
 			reportStep("Emailaddress label box is not displayed", "Fail");
 		}
 
-		WebElement Emailaddress = driver.findElement(By.xpath("//*[@id='edit-mail']"));
+		WebElement Emailaddress = propElement(getPropfile(gpropname, "Emailaddress"));
 		String CLbox = Emailaddress.getAttribute("value");
 		if (CLbox.isEmpty()) {
 			reportStep("Emailaddress text box is Blank", "Pass");
@@ -143,15 +140,15 @@ public class Icivics_EducatorReg extends ProjectSpecificMethods {
 	}
 
 	@And("Verify Email is verified successfully")
-	public Icivics_EducatorReg verifyEmail() {
-		WebElement VerifyEmailaddresslabel = driver.findElement(By.xpath("//label[text()='Verify email address']"));
+	public Icivics_EducatorReg verifyEmail() throws IOException {
+		WebElement VerifyEmailaddresslabel = propElement(getPropfile(gpropname, "VerifyEmailaddresslabel"));
 		if (VerifyEmailaddresslabel.isDisplayed()) {
 			reportStep("VerifyEmailaddress label is displayed", "Pass");
 		} else {
 			reportStep("VerifyEmailaddress label box is not displayed", "Fail");
 		}
 
-		WebElement VerifyEmailaddress = driver.findElement(By.xpath("//*[@id='edit-conf-mail']"));
+		WebElement VerifyEmailaddress = propElement(getPropfile(gpropname, "VerifyEmailaddress"));
 		String CLbox = VerifyEmailaddress.getAttribute("value");
 		if (CLbox.isEmpty()) {
 			reportStep("VerifyEmailaddress text box is Blank", "Pass");
@@ -162,8 +159,8 @@ public class Icivics_EducatorReg extends ProjectSpecificMethods {
 	}
 
 	@Then("click on next button")
-	public Icivics_EducatorReg nextbutton() {
-		WebElement nextbutton = driver.findElement(By.xpath("//button[@id='edit-next']"));
+	public Icivics_EducatorReg nextbutton() throws IOException {
+		WebElement nextbutton = propElement(getPropfile(gpropname, "nextbutton"));
 
 		if (nextbutton.isDisplayed()) {
 			reportStep("nextbutton is Verified successfully", "Pass");
@@ -174,123 +171,122 @@ public class Icivics_EducatorReg extends ProjectSpecificMethods {
 	}
 
 	@When("Validate play button on hovering getting highlighted")
-	public Icivics_EducatorReg hoverplaybutton() throws InterruptedException {
-		String PlayButton = "XPATH&(//*[@title='Play Games'])[3]";
+	public Icivics_EducatorReg hoverplaybutton() throws InterruptedException, IOException {
+		String PlayButton = getPropfile(gpropname, "PlayButton");
 		mouseOverAction(PlayButton);
 		reportStep("PlayButton is MouseHovered successfully", "Pass");
 		mouseOverAndClickAction(PlayButton);
-		driver.findElement(By.xpath("(//*[@class='dropdown-menu'])[5]")).isDisplayed();
+		propElement(getPropfile(gpropname, "PlayButtondropdownele")).isDisplayed();
 		reportStep("PlayButton Dropdown is Displayed", "Pass");
 		return this;
 	}
 
 	@And("Validate teach button on hovering getting highlighted")
-	public Icivics_EducatorReg hoverteachbutton() {
-		String teachButton = "XPATH&(//a[@title='Search Our Library'])[3]";
+	public Icivics_EducatorReg hoverteachbutton() throws IOException {
+		String teachButton = getPropfile(gpropname, "teachButton");
 		mouseOverAction(teachButton);
 		reportStep("TeachButton is MouseHowered successfully", "Pass");
 		mouseOverAndClickAction(teachButton);
-		driver.findElement(By.xpath("(//*[@class='dropdown-menu'])[6]")).isDisplayed();
+		propElement(getPropfile(gpropname, "teachButtondropdownele")).isDisplayed();
 		waitTime(3000);
 		reportStep("TeachButton Dropdown is Displayed", "Pass");
 		return this;
 	}
 
 	@And("Validate about button on hovering getting highlighted")
-	public Icivics_EducatorReg hoveraboutbutton() {
-		String donateButton = "XPATH&(//a[@title='Learn how you can financially support and fund iCivics.'])[3]";
+	public Icivics_EducatorReg hoveraboutbutton() throws IOException {
+		String donateButton = getPropfile(gpropname, "donateButton");
 		mouseOverAction(donateButton);
 		reportStep("aboutButton is MouseHowered successfully", "Pass");
 		mouseOverAndClickAction(donateButton);
-		driver.findElement(By.xpath("(//*[@class='dropdown-menu'])[7]")).isDisplayed();
+		propElement(getPropfile(gpropname, "donateButtondropdownele")).isDisplayed();
 		reportStep("aboutButton Dropdown is Displayed", "Pass");
 		return this;
 	}
 
 	@And("Validate donate button on hovering")
-	public Icivics_EducatorReg Donatebutton() throws InterruptedException {
-		String donate = "XPATH&(//a[text()='DONATE'])[2]";
+	public Icivics_EducatorReg Donatebutton() throws InterruptedException, IOException {
+		String donate = getPropfile(gpropname, "donate");
 		mouseOverAction(donate);
 		waitTime(3000);
 		return this;
 	}
 
 	@And("Validate shop button on hovering")
-	public Icivics_EducatorReg shopbutton() {
-		String shop = "XPATH&(//a[@title='Shop iCivics.'])[2]";
+	public Icivics_EducatorReg shopbutton() throws IOException {
+		String shop = getPropfile(gpropname, "shop");
 		mouseOverAction(shop);
 		return this;
 	}
 
 	@And("Verify signin button on hovering getting highlighted")
-	public Icivics_EducatorReg signinbutton() {
-		String signinButton = "XPATH&(//a[@title='Sign In'])[3]";
+	public Icivics_EducatorReg signinbutton() throws IOException {
+		String signinButton = getPropfile(gpropname, "signinButton");
 		mouseOverAction(signinButton);
 		reportStep("singinButton is MouseHowered successfully", "Pass");
 		mouseOverAndClickAction(signinButton);
-		driver.findElement(By.xpath("(//*[@class='dropdown-menu'])[8]")).isDisplayed();
+		propElement(getPropfile(gpropname, "signinButtondropdownele")).isDisplayed();
 		reportStep("signinButton Dropdown is Displayed", "Pass");
 		return this;
 	}
 
 	@And("Firstname field on hovering get highlighted")
-	public Icivics_EducatorReg hoverfirstname() {
-		String firstname = "XPATH&(//input[@type='text'])[1]";
+	public Icivics_EducatorReg hoverfirstname() throws IOException {
+		String firstname = getPropfile(gpropname, "firstname1");
 		mouseOverAction(firstname);
 		waitTime(3000);
 		return this;
 	}
 
 	@And("Lastname field on hovering get highlighted")
-	public Icivics_EducatorReg hoverlastname() {
-		String firstname = "XPATH&(//input[@type='text'])[2]";
-		mouseOverAction(firstname);
+	public Icivics_EducatorReg hoverlastname() throws IOException {
+		String lastname = getPropfile(gpropname, "lastname1");
+		mouseOverAction(lastname);
 		waitTime(3000);
 		return this;
 	}
 
 	@And("Email field on hovering should highlighted")
-	public Icivics_EducatorReg hoveremail() {
-		String email = "XPATH&(//input[@type='email'])[1]";
+	public Icivics_EducatorReg hoveremail() throws IOException {
+		String email = getPropfile(gpropname, "email");
 		mouseOverAction(email);
 		waitTime(3000);
 		return this;
 	}
 
 	@And("Verify Email field on hovering should highlighted")
-	public Icivics_EducatorReg hoververifyemail() {
-		String verifyemail = "XPATH&(//input[@type='email'])[2]";
+	public Icivics_EducatorReg hoververifyemail() throws IOException {
+		String verifyemail = getPropfile(gpropname, "verifyemail");
 		mouseOverAction(verifyemail);
 		waitTime(3000);
 		return this;
 	}
 
 	@And("Validate Nextbutton on hovering getting highlighted")
-	public Icivics_EducatorReg hovernextbutton() {
-		String next = "XPATH&//button[contains(@class,'icon-before button')]";
+	public Icivics_EducatorReg hovernextbutton() throws IOException {
+		String next = getPropfile(gpropname, "nextbutton");
 		mouseOverAction(next);
 		return this;
 	}
 
 	@When("click on next button check spelling for alert msgs")
-	public Icivics_EducatorReg typos() {
-		clickOn("XPATH&//button[contains(@class,'icon-before button')]");
+	public Icivics_EducatorReg typos() throws IOException {
+		
+		clickOn(getPropfile(gpropname, "nextbutton1"));
 
-		WebElement firstnamealertmsg = driver.findElement(By.xpath("//li[text()='Field First Name is required']"));
+		WebElement firstnamealertmsg = propElement(getPropfile(gpropname, "firstnamealertmsg"));
 		verifyExactText(firstnamealertmsg, "Field First Name is required");
 
-		WebElement lastnamealertmsg = driver.findElement(By.xpath("//li[text()='Field Last Name is required']"));
+		WebElement lastnamealertmsg = propElement(getPropfile(gpropname, "lastnamealertmsg"));
 		verifyExactText(lastnamealertmsg, "Field Last Name is required");
 
-		WebElement alertmsg = driver.findElement(By.xpath("//li[text()='2 errors have been found: ']"));
+		WebElement alertmsg = propElement(getPropfile(gpropname, "alertmsg"));
 		verifyPartialText(alertmsg, "2 errors have been found:");
 
-		WebElement emailalertmsg = driver
-				.findElement(By.xpath("(//div[@class='form-item--error-message alert alert-danger alert-sm'])[1]"));
+		WebElement emailalertmsg = propElement(getPropfile(gpropname, "emailalertmsg"));
 		verifyPartialText(emailalertmsg, "Email address field is required.");
 
-		WebElement verifyemailalertmsg = driver
-				.findElement(By.xpath("(//div[@class='form-item--error-message alert alert-danger alert-sm'])[2]"));
+		WebElement verifyemailalertmsg = propElement(getPropfile(gpropname, "verifyemailalertmsg"));
 		verifyPartialText(verifyemailalertmsg, "Verify email address field is required.");
 
 		return this;
@@ -321,8 +317,8 @@ public class Icivics_EducatorReg extends ProjectSpecificMethods {
 	}
 
 	@When("Pagecounter is verified successfully")
-	public Icivics_EducatorReg pagebreadcrumbs() {
-		WebElement Pagecounter = driver.findElement(By.xpath("//div[@class='register-form-steps-wrapper']/ul"));
+	public Icivics_EducatorReg pagebreadcrumbs() throws IOException {
+		WebElement Pagecounter = propElement(getPropfile(gpropname, "Pagecounter"));
 		if (Pagecounter.isDisplayed()) {
 			waitTime(3000);
 			reportStep("Page counter 1-5 is Displayed", "Pass");
@@ -333,10 +329,9 @@ public class Icivics_EducatorReg extends ProjectSpecificMethods {
 	}
 
 	@Then("On teach page, check all links of Play button")
-	public Icivics_EducatorReg Playbuttonelementsverification() throws IOException {
-		String propname = "playdropdown";
+	public Icivics_EducatorReg Playbuttonelementsverification(String URL) throws IOException {
+		String propname = "EducatorRegistration/playdropdown";
 		String PlayButton = getPropfile(propname, "PlayButtonElement");
-		String URL = "https://staging.d9.icivics.org/user/register?role=teacher";
 		navigateto(URL);
 
 		// All Games
@@ -448,10 +443,9 @@ public class Icivics_EducatorReg extends ProjectSpecificMethods {
 	}
 
 	@Then("check all links of teach button")
-	public Icivics_EducatorReg Teachbuttonelementsverification() throws IOException {
-		String propname = "teachdropdown";
+	public Icivics_EducatorReg Teachbuttonelementsverification(String URL) throws IOException {
+		String propname = "EducatorRegistration/teachdropdown";
 		String TeachButton = getPropfile(propname, "TeachButtonElement");
-		String URL = "https://staging.d9.icivics.org/user/register?role=teacher";
 		navigateto(URL);
 
 		// Search Our Library
@@ -500,10 +494,9 @@ public class Icivics_EducatorReg extends ProjectSpecificMethods {
 	}
 
 	@Then("check all links of about button")
-	public Icivics_EducatorReg aboutbuttonelementsverification() throws IOException {
-		String propname = "aboutdropdown";
+	public Icivics_EducatorReg aboutbuttonelementsverification(String URL) throws IOException {
+		String propname = "EducatorRegistration/aboutdropdown";
 		String AboutButton = getPropfile(propname, "AboutButtonElement");
-		String URL = "https://staging.d9.icivics.org/user/register?role=teacher";
 		navigateto(URL);
 
 		// About iCivics
@@ -556,7 +549,7 @@ public class Icivics_EducatorReg extends ProjectSpecificMethods {
 
 	@Then("check all links of Donate button")
 	public Icivics_EducatorReg donatebuttonelementsverification() throws IOException {
-		String propname = "donatebutton";
+		String propname = "EducatorRegistration/donatebutton";
 		String DonateButton = getPropfile(propname, "DonateButtonElement");
 		clickOn(DonateButton);
 		verifyTitlecontains(getPropfile(propname, "DonateTitle"));

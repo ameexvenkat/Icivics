@@ -2,6 +2,7 @@ package selenium.base;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -1855,11 +1856,22 @@ public class SeleniumBase extends Reporter implements Browser, Element {
 	}
 
 	@Override
-	public String getPropfile(String propname, String value) throws IOException {
+	public String getPropfile(String propname, String value) {
 
-		FileInputStream fis = new FileInputStream("./icivics_Properties/" + propname + ".properties");
+		FileInputStream fis = null;
+		try {
+			fis = new FileInputStream("./icivics_Properties/" + propname + ".properties");
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		prop = new Properties();
-		prop.load(fis);
+		try {
+			prop.load(fis);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 
 		try {
 			return prop.getProperty(value);
@@ -1907,6 +1919,40 @@ public class SeleniumBase extends Reporter implements Browser, Element {
 		else if (key.equalsIgnoreCase("CLASSNAME"))
 			try {
 				element = driver.findElementByClassName(value);
+			} catch (Exception e) {
+				reportStep("The Element with locator:" + locatorType + " Not Found with value: " + value, "fail");
+			}
+
+		return element;
+	}
+	
+	@Override
+	public List<WebElement> propElement1(String locatorType) {
+		String[] data = locatorType.split("&");
+		String key = data[0];
+		String value = data[1];
+		List<WebElement> element = null;
+		if (key.equalsIgnoreCase("XPATH"))
+			try {
+				element = driver.findElementsByXPath(value);
+			} catch (Exception e) {
+				reportStep("The Element with locator:" + locatorType + " Not Found with value: " + value, "fail");
+			}
+		else if (key.equalsIgnoreCase("ID"))
+			try {
+				element = driver.findElementsById(value);
+			} catch (Exception e) {
+				reportStep("The Element with locator:" + locatorType + " Not Found with value: " + value, "fail");
+			}
+		else if (key.equalsIgnoreCase("CSSSELECTOR"))
+			try {
+				element = driver.findElementsByCssSelector(value);
+			} catch (Exception e) {
+				reportStep("The Element with locator:" + locatorType + " Not Found with value: " + value, "fail");
+			}
+		else if (key.equalsIgnoreCase("CLASSNAME"))
+			try {
+				element = driver.findElementsByClassName(value);
 			} catch (Exception e) {
 				reportStep("The Element with locator:" + locatorType + " Not Found with value: " + value, "fail");
 			}

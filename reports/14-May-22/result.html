@@ -1,0 +1,1608 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset='utf-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/b4a58fcfd1e137bd9287244035a7c80d3d73b3af/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>ICIVICS TEST REPORT</title>
+
+	<style type='text/css'>
+	</style>
+</head>
+
+	<body class='extent standard default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>ICIVICS AUTOMATION DASHBOARD</span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<li>
+                <a href='#!'>
+                    <span class='label suite-start-time blue darken-3'>May 14, 2022 10:29:47 PM</span>
+				</a>
+			</li>
+			<li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>3.1.5</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Tests</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>9</span> test(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>227</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Tests</h5>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Educator Registration General</span>
+						<span class='test-time'>May 14, 2022 10:27:34 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 14, 2022 10:27:34 PM</span>
+	<span class='label end-time'>May 14, 2022 10:27:34 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
+					<div class='test-heading'>
+						<span class='test-name'>Educator Registration General</span>
+						<span class='test-time'>May 14, 2022 10:28:15 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 14, 2022 10:28:15 PM</span>
+	<span class='label end-time'>May 14, 2022 10:28:15 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='3'>
+					<div class='test-heading'>
+						<span class='test-name'>Educator Registration General</span>
+						<span class='test-time'>May 14, 2022 10:28:49 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 14, 2022 10:28:49 PM</span>
+	<span class='label end-time'>May 14, 2022 10:28:49 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='4'>
+					<div class='test-heading'>
+						<span class='test-name'>Educator Registration General</span>
+						<span class='test-time'>May 14, 2022 10:29:47 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 14, 2022 10:29:47 PM</span>
+	<span class='label end-time'>May 14, 2022 10:35:40 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 5m 52s+427ms</span>
+</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='5'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>C321 - Are all page elements consistent with those on Live?</h5>
+						<span class="node-time label grey lighten-1 white-text">May 14, 2022 10:30:13 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 20s+46ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:29:58 PM</td>
+													<td class='step-details'>The expected https://staging.d9.icivics.org/user/register?role=teacher url as same as the https://staging.d9.icivics.org/user/register?role=teacher actual url.<img data-featherlight='./../images/113241586.jpg' width='10%' src='./../images/113241586.jpg' data-src='./../images/113241586.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:29:58 PM</td>
+													<td class='step-details'>Page counter 1-5 is Displayed<img data-featherlight='./../images/709734903.jpg' width='10%' src='./../images/709734903.jpg' data-src='./../images/709734903.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:29:59 PM</td>
+													<td class='step-details'>Username label is displayed<img data-featherlight='./../images/455779010.jpg' width='10%' src='./../images/455779010.jpg' data-src='./../images/455779010.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:30:11 PM</td>
+													<td class='step-details'>Pine Patriot 9w6i is not equal to Jade Aviator b3u2 new generated name is Verified successfully<img data-featherlight='./../images/829198845.jpg' width='10%' src='./../images/829198845.jpg' data-src='./../images/829198845.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:30:11 PM</td>
+													<td class='step-details'>Randomize button is Verified successfully<img data-featherlight='./../images/11804014.jpg' width='10%' src='./../images/11804014.jpg' data-src='./../images/11804014.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:30:11 PM</td>
+													<td class='step-details'>First name label is displayed<img data-featherlight='./../images/525526326.jpg' width='10%' src='./../images/525526326.jpg' data-src='./../images/525526326.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:30:11 PM</td>
+													<td class='step-details'>First name text box is Blank<img data-featherlight='./../images/90112166.jpg' width='10%' src='./../images/90112166.jpg' data-src='./../images/90112166.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:30:12 PM</td>
+													<td class='step-details'>Lastname label is displayed<img data-featherlight='./../images/769857982.jpg' width='10%' src='./../images/769857982.jpg' data-src='./../images/769857982.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:30:12 PM</td>
+													<td class='step-details'>Last name text box is Blank<img data-featherlight='./../images/668324125.jpg' width='10%' src='./../images/668324125.jpg' data-src='./../images/668324125.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:30:12 PM</td>
+													<td class='step-details'>Emailaddress label is displayed<img data-featherlight='./../images/20934795.jpg' width='10%' src='./../images/20934795.jpg' data-src='./../images/20934795.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:30:13 PM</td>
+													<td class='step-details'>Emailaddress text box is Blank<img data-featherlight='./../images/635305774.jpg' width='10%' src='./../images/635305774.jpg' data-src='./../images/635305774.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:30:13 PM</td>
+													<td class='step-details'>VerifyEmailaddress label is displayed<img data-featherlight='./../images/689394014.jpg' width='10%' src='./../images/689394014.jpg' data-src='./../images/689394014.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:30:13 PM</td>
+													<td class='step-details'>VerifyEmailaddress text box is Blank<img data-featherlight='./../images/677374894.jpg' width='10%' src='./../images/677374894.jpg' data-src='./../images/677374894.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:30:13 PM</td>
+													<td class='step-details'>nextbutton is Verified successfully<img data-featherlight='./../images/877439411.jpg' width='10%' src='./../images/877439411.jpg' data-src='./../images/877439411.jpg'></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='6'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>C322 - Do all buttons have hover/click states consistent with Live?</h5>
+						<span class="node-time label grey lighten-1 white-text">May 14, 2022 10:30:50 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 30s+731ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:30:23 PM</td>
+													<td class='step-details'>The expected https://staging.d9.icivics.org/user/register?role=teacher url as same as the https://staging.d9.icivics.org/user/register?role=teacher actual url.<img data-featherlight='./../images/397522072.jpg' width='10%' src='./../images/397522072.jpg' data-src='./../images/397522072.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:30:24 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//*[@title='Play Games'])[3] is performed.<img data-featherlight='./../images/436216060.jpg' width='10%' src='./../images/436216060.jpg' data-src='./../images/436216060.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:30:24 PM</td>
+													<td class='step-details'>PlayButton is MouseHovered successfully<img data-featherlight='./../images/525578720.jpg' width='10%' src='./../images/525578720.jpg' data-src='./../images/525578720.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:30:25 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//*[@title='Play Games'])[3] is performed.<img data-featherlight='./../images/680991005.jpg' width='10%' src='./../images/680991005.jpg' data-src='./../images/680991005.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:30:25 PM</td>
+													<td class='step-details'>PlayButton Dropdown is Displayed<img data-featherlight='./../images/541238551.jpg' width='10%' src='./../images/541238551.jpg' data-src='./../images/541238551.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:30:25 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//a[@title='Search Our Library'])[3] is performed.<img data-featherlight='./../images/95966331.jpg' width='10%' src='./../images/95966331.jpg' data-src='./../images/95966331.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:30:26 PM</td>
+													<td class='step-details'>TeachButton is MouseHowered successfully<img data-featherlight='./../images/76338053.jpg' width='10%' src='./../images/76338053.jpg' data-src='./../images/76338053.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:30:26 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//a[@title='Search Our Library'])[3] is performed.<img data-featherlight='./../images/747886064.jpg' width='10%' src='./../images/747886064.jpg' data-src='./../images/747886064.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:30:29 PM</td>
+													<td class='step-details'>TeachButton Dropdown is Displayed<img data-featherlight='./../images/112138523.jpg' width='10%' src='./../images/112138523.jpg' data-src='./../images/112138523.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:30:30 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//a[@title='Learn how you can financially support and fund iCivics.'])[3] is performed.<img data-featherlight='./../images/813768292.jpg' width='10%' src='./../images/813768292.jpg' data-src='./../images/813768292.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:30:30 PM</td>
+													<td class='step-details'>aboutButton is MouseHowered successfully<img data-featherlight='./../images/329910242.jpg' width='10%' src='./../images/329910242.jpg' data-src='./../images/329910242.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:30:30 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//a[@title='Learn how you can financially support and fund iCivics.'])[3] is performed.<img data-featherlight='./../images/242883283.jpg' width='10%' src='./../images/242883283.jpg' data-src='./../images/242883283.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:30:31 PM</td>
+													<td class='step-details'>aboutButton Dropdown is Displayed<img data-featherlight='./../images/786336299.jpg' width='10%' src='./../images/786336299.jpg' data-src='./../images/786336299.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:30:31 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//a[text()='DONATE'])[2] is performed.<img data-featherlight='./../images/897854542.jpg' width='10%' src='./../images/897854542.jpg' data-src='./../images/897854542.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:30:34 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//a[@title='Shop iCivics.'])[2] is performed.<img data-featherlight='./../images/360636100.jpg' width='10%' src='./../images/360636100.jpg' data-src='./../images/360636100.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:30:35 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//a[@title='Sign In'])[3] is performed.<img data-featherlight='./../images/212392792.jpg' width='10%' src='./../images/212392792.jpg' data-src='./../images/212392792.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:30:35 PM</td>
+													<td class='step-details'>singinButton is MouseHowered successfully<img data-featherlight='./../images/488420175.jpg' width='10%' src='./../images/488420175.jpg' data-src='./../images/488420175.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:30:35 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//a[@title='Sign In'])[3] is performed.<img data-featherlight='./../images/323156875.jpg' width='10%' src='./../images/323156875.jpg' data-src='./../images/323156875.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:30:35 PM</td>
+													<td class='step-details'>signinButton Dropdown is Displayed<img data-featherlight='./../images/752761187.jpg' width='10%' src='./../images/752761187.jpg' data-src='./../images/752761187.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:30:36 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//input[@type='text'])[1] is performed.<img data-featherlight='./../images/466603381.jpg' width='10%' src='./../images/466603381.jpg' data-src='./../images/466603381.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:30:39 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//input[@type='text'])[2] is performed.<img data-featherlight='./../images/429488485.jpg' width='10%' src='./../images/429488485.jpg' data-src='./../images/429488485.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:30:43 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//input[@type='email'])[1] is performed.<img data-featherlight='./../images/816037718.jpg' width='10%' src='./../images/816037718.jpg' data-src='./../images/816037718.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:30:46 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//input[@type='email'])[2] is performed.<img data-featherlight='./../images/79041864.jpg' width='10%' src='./../images/79041864.jpg' data-src='./../images/79041864.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:30:50 PM</td>
+													<td class='step-details'>The mouse over by xpath : //button[contains(@class,'icon-before button')] is performed.<img data-featherlight='./../images/883573532.jpg' width='10%' src='./../images/883573532.jpg' data-src='./../images/883573532.jpg'></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='7'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>C323 - Do all buttons/links navigate you to the appropriate page?</h5>
+						<span class="node-time label grey lighten-1 white-text">May 14, 2022 10:34:59 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 4m 6s+446ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:30:56 PM</td>
+													<td class='step-details'>The expected https://staging.d9.icivics.org/user/register?role=teacher url as same as the https://staging.d9.icivics.org/user/register?role=teacher actual url.<img data-featherlight='./../images/378169937.jpg' width='10%' src='./../images/378169937.jpg' data-src='./../images/378169937.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:30:57 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//*[@title='Play Games'])[3] is performed.<img data-featherlight='./../images/142066183.jpg' width='10%' src='./../images/142066183.jpg' data-src='./../images/142066183.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:30:58 PM</td>
+													<td class='step-details'>The element [[ChromeDriver: chrome on WINDOWS (d29afbb4fb6e4eff610ece590c3d8cca)] -> xpath: (//li[contains(@class,'first all')]//a)[2]] is visible<img data-featherlight='./../images/892207850.jpg' width='10%' src='./../images/892207850.jpg' data-src='./../images/892207850.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:30:58 PM</td>
+													<td class='step-details'>The expected text contains the actual ALL GAMES<img data-featherlight='./../images/575596484.jpg' width='10%' src='./../images/575596484.jpg' data-src='./../images/575596484.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:02 PM</td>
+													<td class='step-details'>The Element ALL GAMES clicked<img data-featherlight='./../images/192560801.jpg' width='10%' src='./../images/192560801.jpg' data-src='./../images/192560801.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:03 PM</td>
+													<td class='step-details'>The expected https://staging.d9.icivics.org/games url as same as the https://staging.d9.icivics.org/games actual url.<img data-featherlight='./../images/137588190.jpg' width='10%' src='./../images/137588190.jpg' data-src='./../images/137588190.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:03 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//*[@title='Play Games'])[3] is performed.<img data-featherlight='./../images/328356424.jpg' width='10%' src='./../images/328356424.jpg' data-src='./../images/328356424.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:04 PM</td>
+													<td class='step-details'>The element [[ChromeDriver: chrome on WINDOWS (d29afbb4fb6e4eff610ece590c3d8cca)] -> xpath: (//li[contains(@class,'cast')]//a)[2]] is visible<img data-featherlight='./../images/853560578.jpg' width='10%' src='./../images/853560578.jpg' data-src='./../images/853560578.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:04 PM</td>
+													<td class='step-details'>The expected text contains the actual CAST YOUR VOTE<img data-featherlight='./../images/709078326.jpg' width='10%' src='./../images/709078326.jpg' data-src='./../images/709078326.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:10 PM</td>
+													<td class='step-details'>The Element CAST YOUR VOTE clicked<img data-featherlight='./../images/122813878.jpg' width='10%' src='./../images/122813878.jpg' data-src='./../images/122813878.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:10 PM</td>
+													<td class='step-details'>The expected https://staging.d9.icivics.org/games/cast-your-vote url as same as the https://staging.d9.icivics.org/games/cast-your-vote actual url.<img data-featherlight='./../images/553482568.jpg' width='10%' src='./../images/553482568.jpg' data-src='./../images/553482568.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:11 PM</td>
+													<td class='step-details'>The expected text contains the actual Cast Your Vote<img data-featherlight='./../images/748560554.jpg' width='10%' src='./../images/748560554.jpg' data-src='./../images/748560554.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:12 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//*[@title='Play Games'])[3] is performed.<img data-featherlight='./../images/305420918.jpg' width='10%' src='./../images/305420918.jpg' data-src='./../images/305420918.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:12 PM</td>
+													<td class='step-details'>The element [[ChromeDriver: chrome on WINDOWS (d29afbb4fb6e4eff610ece590c3d8cca)] -> xpath: (//li[@class='counties work: texas']/a)[2]] is visible<img data-featherlight='./../images/709242425.jpg' width='10%' src='./../images/709242425.jpg' data-src='./../images/709242425.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:13 PM</td>
+													<td class='step-details'>The expected text contains the actual COUNTIES WORK: TEXAS<img data-featherlight='./../images/119603234.jpg' width='10%' src='./../images/119603234.jpg' data-src='./../images/119603234.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:20 PM</td>
+													<td class='step-details'>The Element COUNTIES WORK: TEXAS clicked<img data-featherlight='./../images/801676101.jpg' width='10%' src='./../images/801676101.jpg' data-src='./../images/801676101.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:20 PM</td>
+													<td class='step-details'>The expected https://staging.d9.icivics.org/games/counties-work-texas url as same as the https://staging.d9.icivics.org/games/counties-work-texas actual url.<img data-featherlight='./../images/429141781.jpg' width='10%' src='./../images/429141781.jpg' data-src='./../images/429141781.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:21 PM</td>
+													<td class='step-details'>The expected text contains the actual Counties Work: Texas<img data-featherlight='./../images/567467740.jpg' width='10%' src='./../images/567467740.jpg' data-src='./../images/567467740.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:21 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//*[@title='Play Games'])[3] is performed.<img data-featherlight='./../images/535312631.jpg' width='10%' src='./../images/535312631.jpg' data-src='./../images/535312631.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:21 PM</td>
+													<td class='step-details'>The element [[ChromeDriver: chrome on WINDOWS (d29afbb4fb6e4eff610ece590c3d8cca)] -> xpath: (//li[@class='executive command']/a)[2]] is visible<img data-featherlight='./../images/212618918.jpg' width='10%' src='./../images/212618918.jpg' data-src='./../images/212618918.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:22 PM</td>
+													<td class='step-details'>The expected text contains the actual EXECUTIVE COMMAND<img data-featherlight='./../images/210784795.jpg' width='10%' src='./../images/210784795.jpg' data-src='./../images/210784795.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:31 PM</td>
+													<td class='step-details'>The Element EXECUTIVE COMMAND clicked<img data-featherlight='./../images/552755260.jpg' width='10%' src='./../images/552755260.jpg' data-src='./../images/552755260.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:31 PM</td>
+													<td class='step-details'>The expected https://staging.d9.icivics.org/games/executive-command url as same as the https://staging.d9.icivics.org/games/executive-command actual url.<img data-featherlight='./../images/397109487.jpg' width='10%' src='./../images/397109487.jpg' data-src='./../images/397109487.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:31 PM</td>
+													<td class='step-details'>The expected text contains the actual Executive Command<img data-featherlight='./../images/345859679.jpg' width='10%' src='./../images/345859679.jpg' data-src='./../images/345859679.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:32 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//*[@title='Play Games'])[3] is performed.<img data-featherlight='./../images/261096989.jpg' width='10%' src='./../images/261096989.jpg' data-src='./../images/261096989.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:32 PM</td>
+													<td class='step-details'>The element [[ChromeDriver: chrome on WINDOWS (d29afbb4fb6e4eff610ece590c3d8cca)] -> xpath: (//li[@class='lawcraft']/a)[2]] is visible<img data-featherlight='./../images/695253807.jpg' width='10%' src='./../images/695253807.jpg' data-src='./../images/695253807.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:32 PM</td>
+													<td class='step-details'>The expected text contains the actual LAWCRAFT<img data-featherlight='./../images/672466438.jpg' width='10%' src='./../images/672466438.jpg' data-src='./../images/672466438.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:41 PM</td>
+													<td class='step-details'>The Element LAWCRAFT clicked<img data-featherlight='./../images/628881634.jpg' width='10%' src='./../images/628881634.jpg' data-src='./../images/628881634.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:42 PM</td>
+													<td class='step-details'>The expected https://staging.d9.icivics.org/games/lawcraft url as same as the https://staging.d9.icivics.org/games/lawcraft actual url.<img data-featherlight='./../images/385524130.jpg' width='10%' src='./../images/385524130.jpg' data-src='./../images/385524130.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:42 PM</td>
+													<td class='step-details'>The expected text contains the actual LawCraft<img data-featherlight='./../images/249303186.jpg' width='10%' src='./../images/249303186.jpg' data-src='./../images/249303186.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:43 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//*[@title='Play Games'])[3] is performed.<img data-featherlight='./../images/373364759.jpg' width='10%' src='./../images/373364759.jpg' data-src='./../images/373364759.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:43 PM</td>
+													<td class='step-details'>The element [[ChromeDriver: chrome on WINDOWS (d29afbb4fb6e4eff610ece590c3d8cca)] -> xpath: (//li[@class='sortify: u.s. citizenship']/a)[2]] is visible<img data-featherlight='./../images/841367510.jpg' width='10%' src='./../images/841367510.jpg' data-src='./../images/841367510.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:43 PM</td>
+													<td class='step-details'>The expected text contains the actual SORTIFY: U.S. CITIZENSHIP<img data-featherlight='./../images/236011702.jpg' width='10%' src='./../images/236011702.jpg' data-src='./../images/236011702.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:51 PM</td>
+													<td class='step-details'>The Element SORTIFY: U.S. CITIZENSHIP clicked<img data-featherlight='./../images/162021307.jpg' width='10%' src='./../images/162021307.jpg' data-src='./../images/162021307.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:51 PM</td>
+													<td class='step-details'>The expected https://staging.d9.icivics.org/games/sortify-us-citizenship url as same as the https://staging.d9.icivics.org/games/sortify-us-citizenship actual url.<img data-featherlight='./../images/109897630.jpg' width='10%' src='./../images/109897630.jpg' data-src='./../images/109897630.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:52 PM</td>
+													<td class='step-details'>The expected text contains the actual Sortify: U.S. Citizenship<img data-featherlight='./../images/486411579.jpg' width='10%' src='./../images/486411579.jpg' data-src='./../images/486411579.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:52 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//*[@title='Play Games'])[3] is performed.<img data-featherlight='./../images/460075612.jpg' width='10%' src='./../images/460075612.jpg' data-src='./../images/460075612.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:52 PM</td>
+													<td class='step-details'>The element [[ChromeDriver: chrome on WINDOWS (d29afbb4fb6e4eff610ece590c3d8cca)] -> xpath: (//li[@class='argument wars']/a)[2]] is visible<img data-featherlight='./../images/565202417.jpg' width='10%' src='./../images/565202417.jpg' data-src='./../images/565202417.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:53 PM</td>
+													<td class='step-details'>The expected text contains the actual ARGUMENT WARS<img data-featherlight='./../images/667548132.jpg' width='10%' src='./../images/667548132.jpg' data-src='./../images/667548132.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:57 PM</td>
+													<td class='step-details'>The Element ARGUMENT WARS clicked<img data-featherlight='./../images/455259174.jpg' width='10%' src='./../images/455259174.jpg' data-src='./../images/455259174.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:57 PM</td>
+													<td class='step-details'>The expected https://staging.d9.icivics.org/games/argument-wars url as same as the https://staging.d9.icivics.org/games/argument-wars actual url.<img data-featherlight='./../images/600172635.jpg' width='10%' src='./../images/600172635.jpg' data-src='./../images/600172635.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:58 PM</td>
+													<td class='step-details'>The expected text contains the actual Argument Wars<img data-featherlight='./../images/316530127.jpg' width='10%' src='./../images/316530127.jpg' data-src='./../images/316530127.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:58 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//*[@title='Play Games'])[3] is performed.<img data-featherlight='./../images/908877650.jpg' width='10%' src='./../images/908877650.jpg' data-src='./../images/908877650.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:59 PM</td>
+													<td class='step-details'>The element [[ChromeDriver: chrome on WINDOWS (d29afbb4fb6e4eff610ece590c3d8cca)] -> xpath: (//li[@class='convene the council']/a)[2]] is visible<img data-featherlight='./../images/645610612.jpg' width='10%' src='./../images/645610612.jpg' data-src='./../images/645610612.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:31:59 PM</td>
+													<td class='step-details'>The expected text contains the actual CONVENE THE COUNCIL<img data-featherlight='./../images/642592693.jpg' width='10%' src='./../images/642592693.jpg' data-src='./../images/642592693.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:06 PM</td>
+													<td class='step-details'>The Element CONVENE THE COUNCIL clicked<img data-featherlight='./../images/716207218.jpg' width='10%' src='./../images/716207218.jpg' data-src='./../images/716207218.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:06 PM</td>
+													<td class='step-details'>The expected https://staging.d9.icivics.org/games/convene-council url as same as the https://staging.d9.icivics.org/games/convene-council actual url.<img data-featherlight='./../images/60613990.jpg' width='10%' src='./../images/60613990.jpg' data-src='./../images/60613990.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:06 PM</td>
+													<td class='step-details'>The expected text contains the actual Convene the Council<img data-featherlight='./../images/870187159.jpg' width='10%' src='./../images/870187159.jpg' data-src='./../images/870187159.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:07 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//*[@title='Play Games'])[3] is performed.<img data-featherlight='./../images/614411106.jpg' width='10%' src='./../images/614411106.jpg' data-src='./../images/614411106.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:07 PM</td>
+													<td class='step-details'>The element [[ChromeDriver: chrome on WINDOWS (d29afbb4fb6e4eff610ece590c3d8cca)] -> xpath: (//li[@class='court quest']/a)[2]] is visible<img data-featherlight='./../images/303326429.jpg' width='10%' src='./../images/303326429.jpg' data-src='./../images/303326429.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:07 PM</td>
+													<td class='step-details'>The expected text contains the actual COURT QUEST<img data-featherlight='./../images/110507493.jpg' width='10%' src='./../images/110507493.jpg' data-src='./../images/110507493.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:13 PM</td>
+													<td class='step-details'>The Element COURT QUEST clicked<img data-featherlight='./../images/897041471.jpg' width='10%' src='./../images/897041471.jpg' data-src='./../images/897041471.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:13 PM</td>
+													<td class='step-details'>The expected https://staging.d9.icivics.org/games/court-quest url as same as the https://staging.d9.icivics.org/games/court-quest actual url.<img data-featherlight='./../images/179480289.jpg' width='10%' src='./../images/179480289.jpg' data-src='./../images/179480289.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:14 PM</td>
+													<td class='step-details'>The expected text contains the actual Court Quest<img data-featherlight='./../images/592654173.jpg' width='10%' src='./../images/592654173.jpg' data-src='./../images/592654173.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:14 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//*[@title='Play Games'])[3] is performed.<img data-featherlight='./../images/804827355.jpg' width='10%' src='./../images/804827355.jpg' data-src='./../images/804827355.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:15 PM</td>
+													<td class='step-details'>The element [[ChromeDriver: chrome on WINDOWS (d29afbb4fb6e4eff610ece590c3d8cca)] -> xpath: (//li[@class='game odyssey']/a)[2]] is visible<img data-featherlight='./../images/196005108.jpg' width='10%' src='./../images/196005108.jpg' data-src='./../images/196005108.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:15 PM</td>
+													<td class='step-details'>The expected text contains the actual GAME ODYSSEY<img data-featherlight='./../images/790007114.jpg' width='10%' src='./../images/790007114.jpg' data-src='./../images/790007114.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:20 PM</td>
+													<td class='step-details'>The Element GAME ODYSSEY clicked<img data-featherlight='./../images/446972043.jpg' width='10%' src='./../images/446972043.jpg' data-src='./../images/446972043.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:20 PM</td>
+													<td class='step-details'>The expected https://staging.d9.icivics.org/game-odyssey url as same as the https://staging.d9.icivics.org/game-odyssey actual url.<img data-featherlight='./../images/606999243.jpg' width='10%' src='./../images/606999243.jpg' data-src='./../images/606999243.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:20 PM</td>
+													<td class='step-details'>The expected text contains the actual iCivics Game Odyssey<img data-featherlight='./../images/26701255.jpg' width='10%' src='./../images/26701255.jpg' data-src='./../images/26701255.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:25 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//*[@title='Play Games'])[3] is performed.<img data-featherlight='./../images/308953220.jpg' width='10%' src='./../images/308953220.jpg' data-src='./../images/308953220.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:26 PM</td>
+													<td class='step-details'>The element [[ChromeDriver: chrome on WINDOWS (d29afbb4fb6e4eff610ece590c3d8cca)] -> xpath: (//li[@class='newsfeed defenders']//a)[2]] is visible<img data-featherlight='./../images/592718124.jpg' width='10%' src='./../images/592718124.jpg' data-src='./../images/592718124.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:26 PM</td>
+													<td class='step-details'>The expected text contains the actual NEWSFEED DEFENDERS<img data-featherlight='./../images/750639268.jpg' width='10%' src='./../images/750639268.jpg' data-src='./../images/750639268.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:32 PM</td>
+													<td class='step-details'>The Element NEWSFEED DEFENDERS clicked<img data-featherlight='./../images/892710276.jpg' width='10%' src='./../images/892710276.jpg' data-src='./../images/892710276.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:32 PM</td>
+													<td class='step-details'>The expected https://staging.d9.icivics.org/games/newsfeed-defenders url as same as the https://staging.d9.icivics.org/games/newsfeed-defenders actual url.<img data-featherlight='./../images/830312261.jpg' width='10%' src='./../images/830312261.jpg' data-src='./../images/830312261.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:33 PM</td>
+													<td class='step-details'>The expected text contains the actual NewsFeed Defenders<img data-featherlight='./../images/377393264.jpg' width='10%' src='./../images/377393264.jpg' data-src='./../images/377393264.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:33 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//*[@title='Play Games'])[3] is performed.<img data-featherlight='./../images/296118040.jpg' width='10%' src='./../images/296118040.jpg' data-src='./../images/296118040.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:34 PM</td>
+													<td class='step-details'>The element [[ChromeDriver: chrome on WINDOWS (d29afbb4fb6e4eff610ece590c3d8cca)] -> xpath: (//li[contains(@class,'last win')]//a)[2]] is visible<img data-featherlight='./../images/403761760.jpg' width='10%' src='./../images/403761760.jpg' data-src='./../images/403761760.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:34 PM</td>
+													<td class='step-details'>The expected text contains the actual WIN THE WHITE HOUSE<img data-featherlight='./../images/489259028.jpg' width='10%' src='./../images/489259028.jpg' data-src='./../images/489259028.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:45 PM</td>
+													<td class='step-details'>The Element WIN THE WHITE HOUSE clicked<img data-featherlight='./../images/136045090.jpg' width='10%' src='./../images/136045090.jpg' data-src='./../images/136045090.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:45 PM</td>
+													<td class='step-details'>The expected https://staging.d9.icivics.org/games/win-white-house url as same as the https://staging.d9.icivics.org/games/win-white-house actual url.<img data-featherlight='./../images/278792935.jpg' width='10%' src='./../images/278792935.jpg' data-src='./../images/278792935.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:45 PM</td>
+													<td class='step-details'>The expected text contains the actual Win the White House<img data-featherlight='./../images/533235796.jpg' width='10%' src='./../images/533235796.jpg' data-src='./../images/533235796.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:46 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//*[@title='Play Games'])[3] is performed.<img data-featherlight='./../images/172232518.jpg' width='10%' src='./../images/172232518.jpg' data-src='./../images/172232518.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:46 PM</td>
+													<td class='step-details'>The element [[ChromeDriver: chrome on WINDOWS (d29afbb4fb6e4eff610ece590c3d8cca)] -> xpath: (//li[@class='branches of power']/a)[2]] is visible<img data-featherlight='./../images/281114522.jpg' width='10%' src='./../images/281114522.jpg' data-src='./../images/281114522.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:46 PM</td>
+													<td class='step-details'>The expected text contains the actual BRANCHES OF POWER<img data-featherlight='./../images/219174943.jpg' width='10%' src='./../images/219174943.jpg' data-src='./../images/219174943.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:58 PM</td>
+													<td class='step-details'>The Element BRANCHES OF POWER clicked<img data-featherlight='./../images/331792603.jpg' width='10%' src='./../images/331792603.jpg' data-src='./../images/331792603.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:58 PM</td>
+													<td class='step-details'>The expected https://staging.d9.icivics.org/games/branches-power url as same as the https://staging.d9.icivics.org/games/branches-power actual url.<img data-featherlight='./../images/308205603.jpg' width='10%' src='./../images/308205603.jpg' data-src='./../images/308205603.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:59 PM</td>
+													<td class='step-details'>The expected text contains the actual Branches of Power<img data-featherlight='./../images/655028322.jpg' width='10%' src='./../images/655028322.jpg' data-src='./../images/655028322.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:59 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//*[@title='Play Games'])[3] is performed.<img data-featherlight='./../images/50551098.jpg' width='10%' src='./../images/50551098.jpg' data-src='./../images/50551098.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:00 PM</td>
+													<td class='step-details'>The element [[ChromeDriver: chrome on WINDOWS (d29afbb4fb6e4eff610ece590c3d8cca)] -> xpath: (//li[@class='counties work']/a)[2]] is visible<img data-featherlight='./../images/59608512.jpg' width='10%' src='./../images/59608512.jpg' data-src='./../images/59608512.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:00 PM</td>
+													<td class='step-details'>The expected text contains the actual COUNTIES WORK<img data-featherlight='./../images/146711027.jpg' width='10%' src='./../images/146711027.jpg' data-src='./../images/146711027.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:06 PM</td>
+													<td class='step-details'>The Element COUNTIES WORK clicked<img data-featherlight='./../images/388142852.jpg' width='10%' src='./../images/388142852.jpg' data-src='./../images/388142852.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:06 PM</td>
+													<td class='step-details'>The expected https://staging.d9.icivics.org/games/counties-work url as same as the https://staging.d9.icivics.org/games/counties-work actual url.<img data-featherlight='./../images/607961629.jpg' width='10%' src='./../images/607961629.jpg' data-src='./../images/607961629.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:06 PM</td>
+													<td class='step-details'>The expected text contains the actual Counties Work<img data-featherlight='./../images/829482618.jpg' width='10%' src='./../images/829482618.jpg' data-src='./../images/829482618.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:07 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//*[@title='Play Games'])[3] is performed.<img data-featherlight='./../images/805634434.jpg' width='10%' src='./../images/805634434.jpg' data-src='./../images/805634434.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:07 PM</td>
+													<td class='step-details'>The element [[ChromeDriver: chrome on WINDOWS (d29afbb4fb6e4eff610ece590c3d8cca)] -> xpath: (//li[@class='do i have a right?'])[2]] is visible<img data-featherlight='./../images/185992497.jpg' width='10%' src='./../images/185992497.jpg' data-src='./../images/185992497.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:07 PM</td>
+													<td class='step-details'>The expected text contains the actual DO I HAVE A RIGHT?<img data-featherlight='./../images/13935602.jpg' width='10%' src='./../images/13935602.jpg' data-src='./../images/13935602.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:16 PM</td>
+													<td class='step-details'>The Element DO I HAVE A RIGHT? clicked<img data-featherlight='./../images/510987800.jpg' width='10%' src='./../images/510987800.jpg' data-src='./../images/510987800.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:16 PM</td>
+													<td class='step-details'>The expected https://staging.d9.icivics.org/games/do-i-have-right url as same as the https://staging.d9.icivics.org/games/do-i-have-right actual url.<img data-featherlight='./../images/702351853.jpg' width='10%' src='./../images/702351853.jpg' data-src='./../images/702351853.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:16 PM</td>
+													<td class='step-details'>The expected text contains the actual Do I Have a Right?<img data-featherlight='./../images/329268546.jpg' width='10%' src='./../images/329268546.jpg' data-src='./../images/329268546.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:16 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//*[@title='Play Games'])[3] is performed.<img data-featherlight='./../images/791017232.jpg' width='10%' src='./../images/791017232.jpg' data-src='./../images/791017232.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:17 PM</td>
+													<td class='step-details'>The element [[ChromeDriver: chrome on WINDOWS (d29afbb4fb6e4eff610ece590c3d8cca)] -> xpath: (//li[@class='immigration nation']/a)[2]] is visible<img data-featherlight='./../images/631875115.jpg' width='10%' src='./../images/631875115.jpg' data-src='./../images/631875115.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:17 PM</td>
+													<td class='step-details'>The expected text contains the actual IMMIGRATION NATION<img data-featherlight='./../images/65480055.jpg' width='10%' src='./../images/65480055.jpg' data-src='./../images/65480055.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:25 PM</td>
+													<td class='step-details'>The Element IMMIGRATION NATION clicked<img data-featherlight='./../images/207552172.jpg' width='10%' src='./../images/207552172.jpg' data-src='./../images/207552172.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:25 PM</td>
+													<td class='step-details'>The expected https://staging.d9.icivics.org/games/immigration-nation url as same as the https://staging.d9.icivics.org/games/immigration-nation actual url.<img data-featherlight='./../images/428869196.jpg' width='10%' src='./../images/428869196.jpg' data-src='./../images/428869196.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:25 PM</td>
+													<td class='step-details'>The expected text contains the actual Immigration Nation<img data-featherlight='./../images/827101228.jpg' width='10%' src='./../images/827101228.jpg' data-src='./../images/827101228.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:26 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//*[@title='Play Games'])[3] is performed.<img data-featherlight='./../images/161325247.jpg' width='10%' src='./../images/161325247.jpg' data-src='./../images/161325247.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:26 PM</td>
+													<td class='step-details'>The element [[ChromeDriver: chrome on WINDOWS (d29afbb4fb6e4eff610ece590c3d8cca)] -> xpath: (//li[@class='race to ratify']/a)[2]] is visible<img data-featherlight='./../images/223547700.jpg' width='10%' src='./../images/223547700.jpg' data-src='./../images/223547700.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:27 PM</td>
+													<td class='step-details'>The expected text contains the actual RACE TO RATIFY<img data-featherlight='./../images/234618083.jpg' width='10%' src='./../images/234618083.jpg' data-src='./../images/234618083.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:35 PM</td>
+													<td class='step-details'>The Element RACE TO RATIFY clicked<img data-featherlight='./../images/228132734.jpg' width='10%' src='./../images/228132734.jpg' data-src='./../images/228132734.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:35 PM</td>
+													<td class='step-details'>The expected https://staging.d9.icivics.org/games/race-ratify url as same as the https://staging.d9.icivics.org/games/race-ratify actual url.<img data-featherlight='./../images/659056236.jpg' width='10%' src='./../images/659056236.jpg' data-src='./../images/659056236.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:36 PM</td>
+													<td class='step-details'>The expected text contains the actual Race to Ratify<img data-featherlight='./../images/598409919.jpg' width='10%' src='./../images/598409919.jpg' data-src='./../images/598409919.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:36 PM</td>
+													<td class='step-details'>All links in the play dropdown is verified sucessfully<img data-featherlight='./../images/499110962.jpg' width='10%' src='./../images/499110962.jpg' data-src='./../images/499110962.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:38 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//a[@title='Search Our Library'])[3] is performed.<img data-featherlight='./../images/555592529.jpg' width='10%' src='./../images/555592529.jpg' data-src='./../images/555592529.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:39 PM</td>
+													<td class='step-details'>The element [[ChromeDriver: chrome on WINDOWS (d29afbb4fb6e4eff610ece590c3d8cca)] -> xpath: (//li[@class='first search our library']/a)[2]] is visible<img data-featherlight='./../images/401695062.jpg' width='10%' src='./../images/401695062.jpg' data-src='./../images/401695062.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:39 PM</td>
+													<td class='step-details'>The expected text contains the actual SEARCH OUR LIBRARY<img data-featherlight='./../images/180732254.jpg' width='10%' src='./../images/180732254.jpg' data-src='./../images/180732254.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:44 PM</td>
+													<td class='step-details'>The Element SEARCH OUR LIBRARY clicked<img data-featherlight='./../images/18881150.jpg' width='10%' src='./../images/18881150.jpg' data-src='./../images/18881150.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:44 PM</td>
+													<td class='step-details'>The expected https://staging.d9.icivics.org/teachers url as same as the https://staging.d9.icivics.org/teachers actual url.<img data-featherlight='./../images/876847441.jpg' width='10%' src='./../images/876847441.jpg' data-src='./../images/876847441.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:45 PM</td>
+													<td class='step-details'>The expected text contains the actual CONTENT SEARCH<img data-featherlight='./../images/846209648.jpg' width='10%' src='./../images/846209648.jpg' data-src='./../images/846209648.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:46 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//a[@title='Search Our Library'])[3] is performed.<img data-featherlight='./../images/211859652.jpg' width='10%' src='./../images/211859652.jpg' data-src='./../images/211859652.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:46 PM</td>
+													<td class='step-details'>The element [[ChromeDriver: chrome on WINDOWS (d29afbb4fb6e4eff610ece590c3d8cca)] -> xpath: (//a[@title='Scope and Sequence'])[2]] is visible<img data-featherlight='./../images/323875166.jpg' width='10%' src='./../images/323875166.jpg' data-src='./../images/323875166.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:46 PM</td>
+													<td class='step-details'>The expected text contains the actual SCOPE & SEQUENCE<img data-featherlight='./../images/716797487.jpg' width='10%' src='./../images/716797487.jpg' data-src='./../images/716797487.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:49 PM</td>
+													<td class='step-details'>The Element SCOPE & SEQUENCE clicked<img data-featherlight='./../images/285308738.jpg' width='10%' src='./../images/285308738.jpg' data-src='./../images/285308738.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:49 PM</td>
+													<td class='step-details'>The expected https://staging.d9.icivics.org/user/login?destination=/viewpdf%3Fpath%3D/sites/default/files/Scope%2520%2526%2520Sequence%25205.13.pdf url as same as the https://staging.d9.icivics.org/user/login?destination=/viewpdf%3Fpath%3D/sites/default/files/Scope%2520%2526%2520Sequence%25205.13.pdf actual url.<img data-featherlight='./../images/528413220.jpg' width='10%' src='./../images/528413220.jpg' data-src='./../images/528413220.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:50 PM</td>
+													<td class='step-details'>The expected text contains the actual Log in to iCivics<img data-featherlight='./../images/674371311.jpg' width='10%' src='./../images/674371311.jpg' data-src='./../images/674371311.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:50 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//a[@title='Search Our Library'])[3] is performed.<img data-featherlight='./../images/64911337.jpg' width='10%' src='./../images/64911337.jpg' data-src='./../images/64911337.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:50 PM</td>
+													<td class='step-details'>The element [[ChromeDriver: chrome on WINDOWS (d29afbb4fb6e4eff610ece590c3d8cca)] -> xpath: (//li[@class='professional development']//a)[2]] is visible<img data-featherlight='./../images/165981636.jpg' width='10%' src='./../images/165981636.jpg' data-src='./../images/165981636.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:51 PM</td>
+													<td class='step-details'>The expected text contains the actual PROFESSIONAL DEVELOPMENT<img data-featherlight='./../images/89261107.jpg' width='10%' src='./../images/89261107.jpg' data-src='./../images/89261107.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:53 PM</td>
+													<td class='step-details'>The Element PROFESSIONAL DEVELOPMENT clicked<img data-featherlight='./../images/407024920.jpg' width='10%' src='./../images/407024920.jpg' data-src='./../images/407024920.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:53 PM</td>
+													<td class='step-details'>The expected https://staging.d9.icivics.org/products/professional-development url as same as the https://staging.d9.icivics.org/products/professional-development actual url.<img data-featherlight='./../images/804463555.jpg' width='10%' src='./../images/804463555.jpg' data-src='./../images/804463555.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:54 PM</td>
+													<td class='step-details'>The expected text contains the actual Professional Development<img data-featherlight='./../images/875390944.jpg' width='10%' src='./../images/875390944.jpg' data-src='./../images/875390944.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:54 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//a[@title='Search Our Library'])[3] is performed.<img data-featherlight='./../images/798642616.jpg' width='10%' src='./../images/798642616.jpg' data-src='./../images/798642616.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:54 PM</td>
+													<td class='step-details'>The element [[ChromeDriver: chrome on WINDOWS (d29afbb4fb6e4eff610ece590c3d8cca)] -> xpath: (//li[@class='get started']//a)[2]] is visible<img data-featherlight='./../images/629603712.jpg' width='10%' src='./../images/629603712.jpg' data-src='./../images/629603712.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:33:54 PM</td>
+													<td class='step-details'>The expected text contains the actual GET STARTED<img data-featherlight='./../images/400963809.jpg' width='10%' src='./../images/400963809.jpg' data-src='./../images/400963809.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:00 PM</td>
+													<td class='step-details'>The Element GET STARTED clicked<img data-featherlight='./../images/773418533.jpg' width='10%' src='./../images/773418533.jpg' data-src='./../images/773418533.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:00 PM</td>
+													<td class='step-details'>The expected https://staging.d9.icivics.org/getstarted url as same as the https://staging.d9.icivics.org/getstarted actual url.<img data-featherlight='./../images/259750696.jpg' width='10%' src='./../images/259750696.jpg' data-src='./../images/259750696.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:01 PM</td>
+													<td class='step-details'>The expected text contains the actual Welcome to iCivics!<img data-featherlight='./../images/386730734.jpg' width='10%' src='./../images/386730734.jpg' data-src='./../images/386730734.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:01 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//a[@title='Search Our Library'])[3] is performed.<img data-featherlight='./../images/25928562.jpg' width='10%' src='./../images/25928562.jpg' data-src='./../images/25928562.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:01 PM</td>
+													<td class='step-details'>The element [[ChromeDriver: chrome on WINDOWS (d29afbb4fb6e4eff610ece590c3d8cca)] -> xpath: (//li[@class='educator community']//a)[2]] is visible<img data-featherlight='./../images/312980872.jpg' width='10%' src='./../images/312980872.jpg' data-src='./../images/312980872.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:01 PM</td>
+													<td class='step-details'>The expected text contains the actual EDUCATOR COMMUNITY<img data-featherlight='./../images/233799789.jpg' width='10%' src='./../images/233799789.jpg' data-src='./../images/233799789.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:07 PM</td>
+													<td class='step-details'>The Element EDUCATOR COMMUNITY clicked<img data-featherlight='./../images/644831377.jpg' width='10%' src='./../images/644831377.jpg' data-src='./../images/644831377.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:12 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//a[@title='Search Our Library'])[3] is performed.<img data-featherlight='./../images/559430877.jpg' width='10%' src='./../images/559430877.jpg' data-src='./../images/559430877.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:12 PM</td>
+													<td class='step-details'>The element [[ChromeDriver: chrome on WINDOWS (d29afbb4fb6e4eff610ece590c3d8cca)] -> xpath: (//li[@class='last faq']//a)[2]] is visible<img data-featherlight='./../images/504171439.jpg' width='10%' src='./../images/504171439.jpg' data-src='./../images/504171439.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:12 PM</td>
+													<td class='step-details'>The expected text contains the actual FAQ<img data-featherlight='./../images/198454689.jpg' width='10%' src='./../images/198454689.jpg' data-src='./../images/198454689.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:16 PM</td>
+													<td class='step-details'>The Element FAQ clicked<img data-featherlight='./../images/673484806.jpg' width='10%' src='./../images/673484806.jpg' data-src='./../images/673484806.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:16 PM</td>
+													<td class='step-details'>The expected https://icivics.zendesk.com/hc/en-us url as same as the https://icivics.zendesk.com/hc/en-us actual url.<img data-featherlight='./../images/310274362.jpg' width='10%' src='./../images/310274362.jpg' data-src='./../images/310274362.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:16 PM</td>
+													<td class='step-details'>The expected text contains the actual Getting Started<img data-featherlight='./../images/546354508.jpg' width='10%' src='./../images/546354508.jpg' data-src='./../images/546354508.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:16 PM</td>
+													<td class='step-details'>All links in the teach dropdown is verified sucessfully<img data-featherlight='./../images/96467767.jpg' width='10%' src='./../images/96467767.jpg' data-src='./../images/96467767.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:18 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//a[@href='/about'])[3] is performed.<img data-featherlight='./../images/32508850.jpg' width='10%' src='./../images/32508850.jpg' data-src='./../images/32508850.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:19 PM</td>
+													<td class='step-details'>The element [[ChromeDriver: chrome on WINDOWS (d29afbb4fb6e4eff610ece590c3d8cca)] -> xpath: (//li[@class='first about icivics']/a)[2]] is visible<img data-featherlight='./../images/116171998.jpg' width='10%' src='./../images/116171998.jpg' data-src='./../images/116171998.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:19 PM</td>
+													<td class='step-details'>The expected text contains the actual ABOUT ICIVICS<img data-featherlight='./../images/873525787.jpg' width='10%' src='./../images/873525787.jpg' data-src='./../images/873525787.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:22 PM</td>
+													<td class='step-details'>The Element ABOUT ICIVICS clicked<img data-featherlight='./../images/640470180.jpg' width='10%' src='./../images/640470180.jpg' data-src='./../images/640470180.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:22 PM</td>
+													<td class='step-details'>The expected https://staging.d9.icivics.org/about url as same as the https://staging.d9.icivics.org/about actual url.<img data-featherlight='./../images/109361732.jpg' width='10%' src='./../images/109361732.jpg' data-src='./../images/109361732.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:23 PM</td>
+													<td class='step-details'>The expected text contains the actual iCivics reimagines civic education for American democracy<img data-featherlight='./../images/737971020.jpg' width='10%' src='./../images/737971020.jpg' data-src='./../images/737971020.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:23 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//a[@href='/about'])[3] is performed.<img data-featherlight='./../images/632571831.jpg' width='10%' src='./../images/632571831.jpg' data-src='./../images/632571831.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:23 PM</td>
+													<td class='step-details'>The element [[ChromeDriver: chrome on WINDOWS (d29afbb4fb6e4eff610ece590c3d8cca)] -> xpath: (//li[contains(@class,'who we')]//a)[2]] is visible<img data-featherlight='./../images/193085265.jpg' width='10%' src='./../images/193085265.jpg' data-src='./../images/193085265.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:24 PM</td>
+													<td class='step-details'>The expected text contains the actual WHO WE ARE<img data-featherlight='./../images/389822475.jpg' width='10%' src='./../images/389822475.jpg' data-src='./../images/389822475.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:29 PM</td>
+													<td class='step-details'>The Element WHO WE ARE clicked<img data-featherlight='./../images/841750383.jpg' width='10%' src='./../images/841750383.jpg' data-src='./../images/841750383.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:29 PM</td>
+													<td class='step-details'>The expected https://staging.icivics.org/who-we-are url as same as the https://staging.icivics.org/who-we-are actual url.<img data-featherlight='./../images/341501604.jpg' width='10%' src='./../images/341501604.jpg' data-src='./../images/341501604.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:30 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//a[@href='/about'])[3] is performed.<img data-featherlight='./../images/172879479.jpg' width='10%' src='./../images/172879479.jpg' data-src='./../images/172879479.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:30 PM</td>
+													<td class='step-details'>The element [[ChromeDriver: chrome on WINDOWS (d29afbb4fb6e4eff610ece590c3d8cca)] -> xpath: (//li[@class='our strategy']//a)[2]] is visible<img data-featherlight='./../images/86416060.jpg' width='10%' src='./../images/86416060.jpg' data-src='./../images/86416060.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:30 PM</td>
+													<td class='step-details'>The expected text contains the actual OUR STRATEGY<img data-featherlight='./../images/270526894.jpg' width='10%' src='./../images/270526894.jpg' data-src='./../images/270526894.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:33 PM</td>
+													<td class='step-details'>The Element OUR STRATEGY clicked<img data-featherlight='./../images/155290086.jpg' width='10%' src='./../images/155290086.jpg' data-src='./../images/155290086.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:33 PM</td>
+													<td class='step-details'>The expected https://staging.icivics.org/our-strategy url as same as the https://staging.icivics.org/our-strategy actual url.<img data-featherlight='./../images/246139889.jpg' width='10%' src='./../images/246139889.jpg' data-src='./../images/246139889.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:35 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//a[@href='/about'])[3] is performed.<img data-featherlight='./../images/393678045.jpg' width='10%' src='./../images/393678045.jpg' data-src='./../images/393678045.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:35 PM</td>
+													<td class='step-details'>The element [[ChromeDriver: chrome on WINDOWS (d29afbb4fb6e4eff610ece590c3d8cca)] -> xpath: (//li[@class='civxnow']//a)[2]] is visible<img data-featherlight='./../images/743342007.jpg' width='10%' src='./../images/743342007.jpg' data-src='./../images/743342007.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:36 PM</td>
+													<td class='step-details'>The expected text contains the actual CIVXNOW<img data-featherlight='./../images/100664859.jpg' width='10%' src='./../images/100664859.jpg' data-src='./../images/100664859.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:42 PM</td>
+													<td class='step-details'>The Element CIVXNOW clicked<img data-featherlight='./../images/52063574.jpg' width='10%' src='./../images/52063574.jpg' data-src='./../images/52063574.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:42 PM</td>
+													<td class='step-details'>The expected https://civxnow.org/ url as same as the https://civxnow.org/ actual url.<img data-featherlight='./../images/587107576.jpg' width='10%' src='./../images/587107576.jpg' data-src='./../images/587107576.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:45 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//a[@href='/about'])[3] is performed.<img data-featherlight='./../images/683660670.jpg' width='10%' src='./../images/683660670.jpg' data-src='./../images/683660670.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:45 PM</td>
+													<td class='step-details'>The element [[ChromeDriver: chrome on WINDOWS (d29afbb4fb6e4eff610ece590c3d8cca)] -> xpath: (//a[@href='/our-team'])[2]] is visible<img data-featherlight='./../images/527983491.jpg' width='10%' src='./../images/527983491.jpg' data-src='./../images/527983491.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:45 PM</td>
+													<td class='step-details'>The expected text contains the actual OUR TEAM<img data-featherlight='./../images/774668295.jpg' width='10%' src='./../images/774668295.jpg' data-src='./../images/774668295.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:48 PM</td>
+													<td class='step-details'>The Element OUR TEAM clicked<img data-featherlight='./../images/533536240.jpg' width='10%' src='./../images/533536240.jpg' data-src='./../images/533536240.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:48 PM</td>
+													<td class='step-details'>The expected https://staging.icivics.org/our-team url as same as the https://staging.icivics.org/our-team actual url.<img data-featherlight='./../images/771299410.jpg' width='10%' src='./../images/771299410.jpg' data-src='./../images/771299410.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:50 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//a[@href='/about'])[3] is performed.<img data-featherlight='./../images/368290606.jpg' width='10%' src='./../images/368290606.jpg' data-src='./../images/368290606.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:50 PM</td>
+													<td class='step-details'>The element [[ChromeDriver: chrome on WINDOWS (d29afbb4fb6e4eff610ece590c3d8cca)] -> xpath: (//li[@class='blog']//a)[2]] is visible<img data-featherlight='./../images/318580320.jpg' width='10%' src='./../images/318580320.jpg' data-src='./../images/318580320.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:51 PM</td>
+													<td class='step-details'>The expected text contains the actual BLOG<img data-featherlight='./../images/834644620.jpg' width='10%' src='./../images/834644620.jpg' data-src='./../images/834644620.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:53 PM</td>
+													<td class='step-details'>The Element BLOG clicked<img data-featherlight='./../images/32510624.jpg' width='10%' src='./../images/32510624.jpg' data-src='./../images/32510624.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:54 PM</td>
+													<td class='step-details'>The expected https://staging.d9.icivics.org/news?keys=&tid%5B1%5D=1 url as same as the https://staging.d9.icivics.org/news?keys=&tid%5B1%5D=1 actual url.<img data-featherlight='./../images/276709977.jpg' width='10%' src='./../images/276709977.jpg' data-src='./../images/276709977.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:54 PM</td>
+													<td class='step-details'>The expected text contains the actual iCivics Blog and News<img data-featherlight='./../images/167828784.jpg' width='10%' src='./../images/167828784.jpg' data-src='./../images/167828784.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:56 PM</td>
+													<td class='step-details'>The mouse over by xpath : (//a[@href='/about'])[3] is performed.<img data-featherlight='./../images/882486647.jpg' width='10%' src='./../images/882486647.jpg' data-src='./../images/882486647.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:56 PM</td>
+													<td class='step-details'>The element [[ChromeDriver: chrome on WINDOWS (d29afbb4fb6e4eff610ece590c3d8cca)] -> xpath: (//a[@href='/contact'])[2]] is visible<img data-featherlight='./../images/231385370.jpg' width='10%' src='./../images/231385370.jpg' data-src='./../images/231385370.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:56 PM</td>
+													<td class='step-details'>The expected text contains the actual CONTACT US<img data-featherlight='./../images/489518630.jpg' width='10%' src='./../images/489518630.jpg' data-src='./../images/489518630.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:57 PM</td>
+													<td class='step-details'>The Element CONTACT US clicked<img data-featherlight='./../images/206873001.jpg' width='10%' src='./../images/206873001.jpg' data-src='./../images/206873001.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:57 PM</td>
+													<td class='step-details'>The expected https://icivics.zendesk.com/hc/en-us/requests/new url as same as the https://icivics.zendesk.com/hc/en-us/requests/new actual url.<img data-featherlight='./../images/366136447.jpg' width='10%' src='./../images/366136447.jpg' data-src='./../images/366136447.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:59 PM</td>
+													<td class='step-details'>All links in the About dropdown is verified sucessfully<img data-featherlight='./../images/502396880.jpg' width='10%' src='./../images/502396880.jpg' data-src='./../images/502396880.jpg'></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='8'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>C324 - Does the page resize responsively at different resolutions?</h5>
+						<span class="node-time label grey lighten-1 white-text">May 14, 2022 10:35:19 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 13s+802ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:35:08 PM</td>
+													<td class='step-details'>The expected https://staging.d9.icivics.org/user/register?role=teacher url as same as the https://staging.d9.icivics.org/user/register?role=teacher actual url.<img data-featherlight='./../images/421565871.jpg' width='10%' src='./../images/421565871.jpg' data-src='./../images/421565871.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:35:12 PM</td>
+													<td class='step-details'>Ipad potrait resize is successfull<img data-featherlight='./../images/431950895.jpg' width='10%' src='./../images/431950895.jpg' data-src='./../images/431950895.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:35:15 PM</td>
+													<td class='step-details'>Ipad landscape resize is successfull<img data-featherlight='./../images/183142172.jpg' width='10%' src='./../images/183142172.jpg' data-src='./../images/183142172.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:35:19 PM</td>
+													<td class='step-details'>Iphone potrait resize is successfull<img data-featherlight='./../images/166444890.jpg' width='10%' src='./../images/166444890.jpg' data-src='./../images/166444890.jpg'></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='9'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>C325 - Is all copy correct??</h5>
+						<span class="node-time label grey lighten-1 white-text">May 14, 2022 10:35:27 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 6s+607ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:35:24 PM</td>
+													<td class='step-details'>The expected https://staging.d9.icivics.org/user/register?role=teacher url as same as the https://staging.d9.icivics.org/user/register?role=teacher actual url.<img data-featherlight='./../images/723652310.jpg' width='10%' src='./../images/723652310.jpg' data-src='./../images/723652310.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:35:26 PM</td>
+													<td class='step-details'>The element : //button[contains(@class,'icon-before button')] is clicked.<img data-featherlight='./../images/300968740.jpg' width='10%' src='./../images/300968740.jpg' data-src='./../images/300968740.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:35:27 PM</td>
+													<td class='step-details'>The expected text contains the actual Field First Name is required<img data-featherlight='./../images/651356129.jpg' width='10%' src='./../images/651356129.jpg' data-src='./../images/651356129.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:35:27 PM</td>
+													<td class='step-details'>The expected text contains the actual Field Last Name is required<img data-featherlight='./../images/440405660.jpg' width='10%' src='./../images/440405660.jpg' data-src='./../images/440405660.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:35:27 PM</td>
+													<td class='step-details'>The expected text contains the actual 2 errors have been found:<img data-featherlight='./../images/714264914.jpg' width='10%' src='./../images/714264914.jpg' data-src='./../images/714264914.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:35:27 PM</td>
+													<td class='step-details'>The expected text contains the actual Email address field is required.<img data-featherlight='./../images/386670186.jpg' width='10%' src='./../images/386670186.jpg' data-src='./../images/386670186.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:35:27 PM</td>
+													<td class='step-details'>The expected text contains the actual Verify email address field is required.<img data-featherlight='./../images/681174216.jpg' width='10%' src='./../images/681174216.jpg' data-src='./../images/681174216.jpg'></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='10'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>C326 - Do you see a set of 5 numbered page breadcrumbs?</h5>
+						<span class="node-time label grey lighten-1 white-text">May 14, 2022 10:35:40 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 6s+362ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:35:36 PM</td>
+													<td class='step-details'>The expected https://staging.d9.icivics.org/user/register?role=teacher url as same as the https://staging.d9.icivics.org/user/register?role=teacher actual url.<img data-featherlight='./../images/125626119.jpg' width='10%' src='./../images/125626119.jpg' data-src='./../images/125626119.jpg'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:35:40 PM</td>
+													<td class='step-details'>Page counter 1-5 is Displayed<img data-featherlight='./../images/454037629.jpg' width='10%' src='./../images/454037629.jpg' data-src='./../images/454037629.jpg'></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view -->
+<!-- category view -->
+<!-- exception view -->
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>9</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>227</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>May 14, 2022 10:29:47 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>May 14, 2022 10:35:45 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>0h 5m 57s+793ms</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 9,
+				failParent: 0,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 0,
+				
+				passChild: 227,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				exceptionsChild: 0,
+				
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/fca20fb7653aade98810546ab96a2a4360e3e712/dist/js/extent.js' type='text/javascript'></script>
+		
+		<script type='text/javascript'>
+			$(document).ready(function() {
+				$('#test-view-charts').addClass('hide');
+			});
+		</script>
+		
+ 		<script type='text/javascript'>
+ 		</script>
+	</body>
+	
+</html>
